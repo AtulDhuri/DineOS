@@ -1,8 +1,12 @@
 import express from 'express'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import cors from 'cors'
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 dotenv.config()
 
