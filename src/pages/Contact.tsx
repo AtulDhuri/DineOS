@@ -1,17 +1,48 @@
 import React, { useState } from 'react'
 import { SEO } from '../components/ui/SEO'
 import { SectionHeader } from '../components/ui/SectionHeader'
-import { LeadForm } from '../components/ui/LeadForm'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, ArrowRight, Users, CheckCircle } from 'lucide-react'
 import { CustomSelect } from '../components/ui/CustomSelect'
 
 export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setIsSending(true)
+    setSubmitError(false)
+
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+
+    const payload = {
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      inquiryType: formData.get('inquiryType') || '',
+      message: formData.get('message') || '',
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      console.error('Contact form error:', error)
+      setSubmitError(true)
+    } finally {
+      setIsSending(false)
+    }
   }
 
   if (submitted) {
@@ -67,7 +98,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">Email</h3>
-                  <p className="text-slate-400">contact@dineos.com</p>
+                  <p className="text-slate-400">contact@dineos.cloud</p>
                   <p className="text-xs text-slate-500 mt-1">Sales & general inquiries</p>
                 </div>
               </motion.div>
@@ -107,6 +138,11 @@ export const Contact: React.FC = () => {
 
             <div className="glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
               <h3 className="text-xl font-bold text-white mb-6">Send us a message</h3>
+              {submitError && (
+                <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                  Failed to send message. Please try again or email us directly at contact@dineos.cloud
+                </div>
+              )}
               <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
                 <div className="relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
@@ -153,9 +189,26 @@ export const Contact: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-purple-600 text-white font-semibold hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={isSending}
+                  className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                    isSending
+                      ? 'bg-slate-600 text-slate-300 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-brand-600 to-purple-600 text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-95'
+                  }`}
                 >
-                  Send Message <ArrowRight size={20} />
+                  {isSending ? (
+                    <>
+                      <svg className="w-4 h-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message <ArrowRight size={20} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

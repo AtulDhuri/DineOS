@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
               <span className="text-slate-400">
                 <Mail size={16} />
               </span>
-              <span className="text-sm text-white">contact@dineos.com</span>
+              <span className="text-sm text-white">contact@dineos.cloud</span>
             </div>
           </div>
         </div>
