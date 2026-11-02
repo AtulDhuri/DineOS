@@ -19,6 +19,17 @@ export const LeadForm: React.FC<LeadFormProps> = ({
   const [status, setStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = React.useState('')
   const [businessType, setBusinessType] = React.useState('')
+  const formRef = React.useRef<HTMLFormElement>(null)
+
+  React.useEffect(() => {
+    if (status === 'success') {
+      const timer = setTimeout(() => {
+        setStatus('idle')
+        setStatusMessage('')
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [status])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -40,11 +51,15 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         body: JSON.stringify(payload),
       })
 
-      if (!res.ok) throw new Error('Failed to send email')
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}))
+        throw new Error(errData.error || 'Failed to send email')
+      }
 
       setStatus('success')
       setStatusMessage('Thank you! Your request has been sent.')
-      ;(e.currentTarget as HTMLFormElement).reset()
+      setBusinessType('')
+      formRef.current?.reset()
     } catch (error) {
       setStatus('error')
       setStatusMessage('Failed to send message. Please try again.')
@@ -78,6 +93,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       )}
 
       <form
+        ref={formRef}
         onSubmit={handleSubmit}
         className="space-y-4"
       >
@@ -152,7 +168,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           required
         />
 
-        <Button type="submit" variant="primary" size="lg" className="w-full">
+        <Button type="submit" variant="primary" size="lg" className="w-full" isLoading={isSubmitting}>
           {buttonText} <ArrowRight size={20} />
         </Button>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SEO } from '../components/ui/SEO'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { motion } from 'framer-motion'
@@ -10,6 +10,16 @@ export const Contact: React.FC = () => {
   const [isSending, setIsSending] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [inquiryType, setInquiryType] = useState('')
+
+  useEffect(() => {
+    if (submitted) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      const timer = setTimeout(() => {
+        setSubmitted(false)
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [submitted])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -116,8 +126,8 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">Phone</h3>
-                  <p className="text-slate-400">+1 (800) DINE-OS1</p>
-                  <p className="text-xs text-slate-500 mt-1">Mon-Fri 9am-6pm EST</p>
+                  <p className="text-slate-400">+91 9004576271</p>
+                  <p className="text-xs text-slate-500 mt-1">WhatsApp</p>
                 </div>
               </motion.div>
 
@@ -132,8 +142,8 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">Office</h3>
-                  <p className="text-slate-400">DineOS HQ, San Francisco, CA</p>
-                  <p className="text-xs text-slate-500 mt-1">By appointment only</p>
+                  <p className="text-slate-400">India</p>
+                  <p className="text-xs text-slate-500 mt-1">Location: India</p>
                 </div>
               </motion.div>
             </div>

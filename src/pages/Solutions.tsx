@@ -1,7 +1,7 @@
 import React from 'react'
 import { SEO } from '../components/ui/SEO'
-import { SectionHeader } from '../components/ui/SectionHeader'
 import { LeadForm } from '../components/ui/LeadForm'
+import { SectionHeader } from '../components/ui/SectionHeader'
 import { motion } from 'framer-motion'
 import { Store, Building, Coffee, Utensils, Wine, Bed, Users, GraduationCap } from 'lucide-react'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { SEO } from '../components/ui/SEO'
-import { SectionHeader } from '../components/ui/SectionHeader'
 import { LeadForm } from '../components/ui/LeadForm'
+import { SectionHeader } from '../components/ui/SectionHeader'
 import { motion } from 'framer-motion'
 import { ArrowRight, Smartphone, Monitor, CreditCard, Flame, Users, ChartPie } from 'lucide-react'
 

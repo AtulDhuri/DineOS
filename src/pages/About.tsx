@@ -116,14 +116,6 @@ export const About: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <section className="section-padding">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Join Our Mission</h2>
-          <p className="text-slate-400 mb-8">We're hiring passionate people who want to transform the hospitality industry.</p>
-          <button className="btn-primary px-8 py-4">View Careers</button>
-        </div>
-      </section>
     </div>
   )
 }

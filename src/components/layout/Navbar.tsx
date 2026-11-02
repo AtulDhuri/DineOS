@@ -15,11 +15,16 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
     { label: 'Features', href: '/features' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Demo', href: '/demo' },
+    // { label: 'Demo', href: '/demo' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
+    // { label: 'Blog', href: '/blog' },
   ]
+
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsMenuOpen(false)
+  }
 
   return (
     <motion.header
@@ -43,12 +48,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+              <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
                 className="text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200"
+                onClick={handleNavClick}
               >
                 {item.label}
               </Link>
@@ -84,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                     key={item.label}
                     to={item.href}
                     className="text-slate-300 hover:text-white text-sm font-medium transition-colors py-3"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleNavClick}
                   >
                     {item.label}
                   </Link>

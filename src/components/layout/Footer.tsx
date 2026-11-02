@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mail } from 'lucide-react'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 import { Button } from '../ui/Button'
 
 export const Footer: React.FC = () => {
@@ -9,15 +9,8 @@ export const Footer: React.FC = () => {
     { label: 'Features', href: '/features' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Demo', href: '/demo' },
+    // { label: 'Demo', href: '/demo' },
     { label: 'About', href: '/about' },
-  ]
-
-  const companyLinks = [
-    { label: 'Contact', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
   ]
 
   return (
@@ -50,55 +43,45 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Company</h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link to={link.href} className="text-sm text-slate-400 hover:text-brand-400 transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Resources</h4>
             <ul className="space-y-3">
-              <li>
+              {/* <li>
                 <Link to="/blog" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/pricing" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">
                   Pricing
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/demo" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">
                   Live Demo
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Get Started</h4>
-            <Button variant="primary" size="sm" className="w-full">
-              <a href="/demo">Book Demo</a>
-            </Button>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-slate-400">
                 <Mail size={16} />
               </span>
               <span className="text-sm text-white">contact@dineos.cloud</span>
             </div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-slate-400">
+                <Phone size={16} />
+              </span>
+              <span className="text-sm text-white">+91 9004576271</span>
+            </div>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} DineOS Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} DineOS. All rights reserved.</p>
           <p className="mt-1">The Operating System for Modern Restaurants</p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 interface SelectOption {
@@ -30,6 +30,10 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
   const [isOpen, setIsOpen] = useState(false)
   const [selected, setSelected] = useState<string>(value || '')
 
+  useEffect(() => {
+    setSelected(value || '')
+  }, [value])
+
   const handleSelect = (val: string) => {
     setSelected(val)
     setIsOpen(false)
@@ -43,6 +47,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
       )}
       <div className="relative" onClick={(e) => e.stopPropagation()}>
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
           className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all ${className} ${error ? 'border-red-500' : ''}`}
         >
@@ -55,6 +60,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
             {options.map((opt) => (
               <button
                 key={opt.value}
+                type="button"
                 onClick={() => handleSelect(opt.value)}
                 className={`w-full px-4 py-3 text-sm text-left transition-colors ${
                   selected === opt.value
