@@ -8,12 +8,13 @@ import { CustomSelect } from '../components/ui/CustomSelect'
 export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false)
   const [isSending, setIsSending] = useState(false)
-  const [submitError, setSubmitError] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [inquiryType, setInquiryType] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSending(true)
-    setSubmitError(false)
+    setSubmitError(null)
 
     const form = e.target as HTMLFormElement
     const formData = new FormData(form)
@@ -21,7 +22,7 @@ export const Contact: React.FC = () => {
     const payload = {
       name: formData.get('name') || '',
       email: formData.get('email') || '',
-      inquiryType: formData.get('inquiryType') || '',
+      inquiryType: inquiryType || formData.get('inquiryType') || '',
       message: formData.get('message') || '',
     }
 
@@ -33,13 +34,14 @@ export const Contact: React.FC = () => {
       })
 
       if (!response.ok) {
-        throw new Error('Failed to send message')
+        const errData = await response.json().catch(() => ({}))
+        throw new Error(errData.error || 'Failed to send message')
       }
 
       setSubmitted(true)
     } catch (error) {
       console.error('Contact form error:', error)
-      setSubmitError(true)
+      setSubmitError(error instanceof Error ? error.message : 'Failed to send message')
     } finally {
       setIsSending(false)
     }
@@ -140,7 +142,7 @@ export const Contact: React.FC = () => {
               <h3 className="text-xl font-bold text-white mb-6">Send us a message</h3>
               {submitError && (
                 <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
-                  Failed to send message. Please try again or email us directly at contact@dineos.cloud
+                  {submitError || 'Failed to send message. Please try again or email us directly at contact@dineos.cloud'}
                 </div>
               )}
               <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
@@ -171,6 +173,8 @@ export const Contact: React.FC = () => {
                 <CustomSelect
                   label="Inquiry Type"
                   name="inquiryType"
+                  value={inquiryType}
+                  onChange={setInquiryType}
                   options={[
                     { value: 'sales', label: 'Sales Inquiry' },
                     { value: 'support', label: 'Technical Support' },

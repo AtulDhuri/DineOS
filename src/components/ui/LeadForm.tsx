@@ -15,6 +15,45 @@ export const LeadForm: React.FC<LeadFormProps> = ({
   subtitle = 'See DineOS in action. Our team will show you how to transform your restaurant operations.',
   buttonText = 'Request Demo',
 }) => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [status, setStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
+  const [statusMessage, setStatusMessage] = React.useState('')
+  const [businessType, setBusinessType] = React.useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setStatus('idle')
+
+    const formData = new FormData(e.currentTarget as HTMLFormElement)
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      inquiryType: businessType || 'demo',
+      message: `Restaurant: ${formData.get('restaurant')}\nPhone: ${formData.get('phone')}\nBusiness Type: ${businessType}`,
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) throw new Error('Failed to send email')
+
+      setStatus('success')
+      setStatusMessage('Thank you! Your request has been sent.')
+      ;(e.currentTarget as HTMLFormElement).reset()
+    } catch (error) {
+      setStatus('error')
+      setStatusMessage('Failed to send message. Please try again.')
+      console.error('Contact form error:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,11 +65,20 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         <p className="text-slate-400">{subtitle}</p>
       </div>
 
+      {status === 'success' && (
+        <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-center">
+          {statusMessage || 'Request submitted successfully!'}
+        </div>
+      )}
+
+      {status === 'error' && (
+        <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-center">
+          {statusMessage || 'Something went wrong. Please try again.'}
+        </div>
+      )}
+
       <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          // Lead capture handler
-        }}
+        onSubmit={handleSubmit}
         className="space-y-4"
       >
         <div className="grid md:grid-cols-2 gap-4">
@@ -88,6 +136,8 @@ export const LeadForm: React.FC<LeadFormProps> = ({
         <CustomSelect
           label="Business Type"
           name="businessType"
+          value={businessType}
+          onChange={setBusinessType}
           options={[
             { value: '', label: 'Select Business Type' },
             { value: 'restaurant', label: 'Restaurant' },
