@@ -1,10 +1,25 @@
+import express from 'express'
+import cors from 'cors'
 import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
-  }
+dotenv.config()
 
+const app = express()
+const PORT = process.env.PORT || 5000
+
+app.use(cors())
+app.use(express.json())
+
+const transporter = nodemailer.createTransport({
+  service: process.env.EMAIL_SERVICE || 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+})
+
+app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, inquiryType, message } = req.body
 
@@ -12,16 +27,6 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' })
     }
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE || 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
-
-    // Send email to the restaurant owner
     await transporter.sendMail({
       from: `"DineOS Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.CONTACT_EMAIL || 'contact@dineos.cloud',
@@ -30,7 +35,7 @@ export default async function handler(req, res) {
         Name: ${name}
         Email: ${email}
         Inquiry Type: ${inquiryType}
-
+        
         Message:
         ${message}
       `,
@@ -45,20 +50,19 @@ export default async function handler(req, res) {
       `,
     })
 
-    // Send confirmation email to the visitor
     await transporter.sendMail({
       from: `"DineOS" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: 'Thank you for contacting DineOS',
       text: `
         Hi ${name},
-
+        
         Thank you for reaching out to DineOS. We've received your message and will get back to you within 24 hours.
-
+        
         Your inquiry details:
         - Type: ${inquiryType}
         - Message: ${message}
-
+        
         Best regards,
         The DineOS Team
       `,
@@ -80,4 +84,8 @@ export default async function handler(req, res) {
     console.error('Email sending error:', error)
     res.status(500).json({ error: 'Failed to send email' })
   }
-}
+})
+
+app.listen(PORT, () => {
+  console.log(`DineOS backend server running on port ${PORT}`)
+})
