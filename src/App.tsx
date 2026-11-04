@@ -15,7 +15,7 @@ import { Blog } from './pages/Blog'
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-16 md:pt-20">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pt-16 md:pt-4">
       <Navbar />
       {children}
       <Footer />
