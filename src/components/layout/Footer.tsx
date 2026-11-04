@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Mail, Phone } from 'lucide-react'
 import { Button } from '../ui/Button'
+import logo from '../../DineOS_footer.png'
 
 export const Footer: React.FC = () => {
   const footerLinks = [
@@ -18,11 +19,12 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-pink-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">D</span>
-              </div>
-              <span className="text-lg font-bold text-white">DineOS</span>
+            <div className="flex items-center mb-4">
+              <img
+                src={logo}
+                alt="DineOS logo"
+                className="h-8 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               The Operating System for Modern Restaurants. Streamline ordering, kitchen, billing, and operations in one platform.

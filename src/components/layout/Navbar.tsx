@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Mail, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import logo from '../../DineOS_header.png'
 
 interface NavbarProps {
   scrolled?: boolean
@@ -31,20 +32,21 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-xl border-b border-white/10'
-          : 'bg-transparent'
+          ? 'bg-slate-950/90 border-b border-white/10 shadow-lg'
+          : 'bg-slate-950/70 border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 cursor-pointer group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
-            <span className="text-xl font-bold text-white tracking-tight">DineOS</span>
+          <Link to="/" className="flex items-center cursor-pointer group">
+            <img
+              src={logo}
+              alt="DineOS logo"
+              className="h-9 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -82,21 +84,19 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden mt-4 pb-4"
+              className="lg:hidden mt-4 overflow-hidden rounded-2xl bg-slate-950/95 backdrop-blur-xl border border-white/10 shadow-2xl"
             >
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-1 p-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="text-slate-300 hover:text-white text-sm font-medium transition-colors py-3"
+                    className="text-slate-300 hover:text-white hover:bg-white/5 text-base font-medium transition-colors px-3 py-3 rounded-lg"
                     onClick={handleNavClick}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
-                </div>
               </div>
             </motion.div>
           )}
