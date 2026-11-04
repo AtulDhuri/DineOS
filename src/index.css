@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --brand-cream: #fff3d6;
+  --brand-navy: #061a3a;
+  --brand-orange: #ff9800;
+  --brand-amber: #ffb21a;
+  --brand-gradient: linear-gradient(135deg, #ffb21a 0%, #ff9800 52%, #e85d04 100%);
 }
 
 @layer base {
@@ -23,7 +27,7 @@
   }
   
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-purple-600 hover:from-brand-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700 hover:from-brand-500 hover:to-brand-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
   }
   
   .btn-secondary {
@@ -49,12 +53,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  background: linear-gradient(180deg, #ffb21a, #e85d04);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #4f46e5, #7c3aed);
+  background: linear-gradient(180deg, #ff9800, #c2410c);
 }
 
 /* Smooth animations */
@@ -65,5 +69,14 @@
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-purple-400 to-pink-400;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-300 via-brand-400 to-brand-700;
+}
+
+/* The header logo uses warm cream lettering. Reuse that tone for primary copy. */
+.text-white {
+  color: var(--brand-cream) !important;
+}
+
+.hover\\:text-white:hover {
+  color: var(--brand-cream) !important;
 }

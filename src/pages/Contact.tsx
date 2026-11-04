@@ -207,7 +207,7 @@ export const Contact: React.FC = () => {
                   className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                     isSending
                       ? 'bg-slate-600 text-slate-300 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-brand-600 to-purple-600 text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-95'
+                      : 'bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700 text-white hover:shadow-[0_0_20px_rgba(255,152,0,0.35)] hover:scale-[1.02] active:scale-95'
                   }`}
                 >
                   {isSending ? (

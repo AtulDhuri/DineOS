@@ -7,18 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
+        // DineOS brand colors sampled from the current logo: warm cream lettering and a vivid orange O.
         brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+          50: '#fffaf0',
+          100: '#fff3d6',
+          200: '#ffe4a8',
+          300: '#ffd06a',
+          400: '#ffb21a',
+          500: '#ff9800',
+          600: '#f57c00',
+          700: '#e85d04',
+          800: '#c2410c',
+          900: '#9a3412',
         },
+        cream: '#fff3d6',
+        'deep-navy': '#061a3a',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -69,13 +72,13 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #ffb21a 0%, #ff9800 52%, #e85d04 100%)',
         'gradient-dark': 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)',
         'gradient-glass': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-        'glow': '0 0 40px rgba(99, 102, 241, 0.4)',
+        'glow': '0 0 40px rgba(255, 152, 0, 0.32)',
       },
     },
   },

@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
       {/* Background gradient glow */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] rounded-full bg-brand-600/20 blur-[120px] animate-[gradient-shift_8s_ease_infinite]" />
-        <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] rounded-full bg-purple-600/20 blur-[120px] animate-[gradient-shift_8s_ease_infinite]" />
+        <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] rounded-full bg-brand-700/20 blur-[120px] animate-[gradient-shift_8s_ease_infinite]" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200"
+                className="text-slate-300 hover:text-brand-300 text-sm font-medium transition-colors duration-200"
                 onClick={handleNavClick}
               >
                 {item.label}
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="text-slate-300 hover:text-white hover:bg-white/5 text-base font-medium transition-colors px-3 py-3 rounded-lg"
+                    className="text-slate-300 hover:text-brand-300 hover:bg-white/5 text-base font-medium transition-colors px-3 py-3 rounded-lg"
                     onClick={handleNavClick}
                   >
                     {item.label}
