@@ -6,31 +6,31 @@ import { Users, Building2, Award, Globe, ShieldCheck, Clock } from 'lucide-react
 
 export const About: React.FC = () => {
   const stats = [
-    { value: '500+', label: 'Restaurant Locations' },
-    { value: '50,000+', label: 'Orders Processed Monthly' },
-    { value: '99.9%', label: 'Platform Uptime' },
-    { value: '1M+', label: 'Meals Served' },
+    { value: 'One', label: 'connected operating system' },
+    { value: 'Every', label: 'team in the workflow' },
+    { value: 'Real', label: 'restaurant operations' },
+    { value: 'Built', label: 'for outlet growth' },
   ]
 
   const values = [
     {
       title: 'Restaurant-First',
-      desc: 'Built by restaurant operators, for restaurant operators. Every feature solves a real problem.',
+      desc: 'Built around real restaurant workflows and the teams who run them.',
       icon: Users,
     },
     {
       title: 'Reliability',
-      desc: '99.9% uptime SLA with enterprise-grade infrastructure and daily backups.',
+      desc: 'Designed to make everyday service clearer, calmer, and easier to manage.',
       icon: ShieldCheck,
     },
     {
       title: 'Global Scale',
-      desc: 'Supporting hospitality groups across multiple countries and currencies.',
+      desc: 'Designed to support operators as they move from one outlet to a connected group.',
       icon: Globe,
     },
     {
       title: 'Continuous Innovation',
-      desc: 'Weekly feature updates based on customer feedback and industry trends.',
+      desc: 'Focused on the operational details that make restaurant service work better.',
       icon: Clock,
     },
   ]

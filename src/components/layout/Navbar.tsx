@@ -10,13 +10,21 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setHasScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const navItems = [
     { label: 'Platform', href: '/product' },
     { label: 'Features', href: '/features' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Pricing', href: '/pricing' },
-    // { label: 'Demo', href: '/demo' },
+    { label: 'Demo', href: '/demo' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
     // { label: 'Blog', href: '/blog' },
@@ -33,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-xl ${
-        scrolled
+        scrolled || hasScrolled
           ? 'bg-slate-950/90 border-b border-white/10 shadow-lg'
           : 'bg-slate-950/70 border-b border-white/5'
       }`}
@@ -63,12 +71,15 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
+            <Link to="/demo" onClick={handleNavClick} className="btn-primary px-4 py-2 text-sm">Book a demo <ArrowRight size={15} /></Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
+            aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
+            aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 text-white"
           >
@@ -97,6 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                     {item.label}
                   </Link>
                 ))}
+                <Link to="/demo" className="btn-primary mt-3 w-full" onClick={handleNavClick}>Book a demo <ArrowRight size={16} /></Link>
               </div>
             </motion.div>
           )}

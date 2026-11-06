@@ -80,3 +80,152 @@
 .hover\\:text-white:hover {
   color: var(--brand-cream) !important;
 }
+
+@layer components {
+  .display-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[1.02] text-white;
+  }
+
+  .display-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.035em] leading-[1.05] text-white;
+  }
+
+  .section-lede {
+    @apply text-lg leading-relaxed text-slate-400;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-brand-300 mb-4;
+  }
+
+  .product-window {
+    @apply rounded-3xl border border-white/10 bg-slate-900/80 shadow-2xl shadow-black/30;
+  }
+
+  .hero-window {
+    @apply ring-1 ring-brand-300/10;
+  }
+
+  .window-dot {
+    @apply block h-2.5 w-2.5 rounded-full;
+  }
+
+  .showcase-tab {
+    @apply flex shrink-0 items-center gap-3 rounded-xl border border-transparent px-4 py-3 text-left text-sm font-medium text-slate-400 transition-all hover:bg-white/5 hover:text-white;
+  }
+
+  .showcase-tab-active {
+    @apply border-white/10 bg-white/[.07] text-white shadow-lg;
+  }
+
+  .journey-line {
+    @apply absolute left-[6%] right-[6%] top-8 hidden h-px bg-gradient-to-r from-transparent via-brand-400/50 to-transparent lg:block;
+  }
+
+  .journey-node {
+    @apply relative flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-slate-900 text-slate-300 shadow-xl;
+  }
+
+  .outcome-card {
+    @apply rounded-2xl border border-white/10 bg-white/[.03] p-6 transition-colors hover:border-brand-400/30;
+  }
+
+  .outcome-card h3 {
+    @apply mt-5 text-lg font-semibold text-white;
+  }
+
+  .outcome-card p {
+    @apply mt-2 text-sm leading-relaxed text-slate-400;
+  }
+
+  .hero-grid {
+    @apply pointer-events-none absolute inset-0 opacity-[.18];
+    background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 75%);
+  }
+}
+
+@layer components {
+  .demo-control {
+    @apply inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[.04] px-3 py-2 text-xs font-semibold text-slate-300 transition-colors hover:border-brand-300/30 hover:text-white;
+  }
+
+  .demo-icon-control {
+    @apply flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/[.04] text-slate-300 transition-colors hover:border-brand-300/30 hover:text-white;
+  }
+
+  .demo-screen {
+    @apply flex min-h-[360px] items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 p-3 shadow-2xl;
+  }
+
+  .demo-screen-phone {
+    @apply mx-auto aspect-[390/844] max-h-[620px] w-full max-w-[300px] p-2;
+  }
+
+  .demo-screen-desktop {
+    @apply aspect-[16/10] w-full;
+  }
+}
+
+@layer components {
+  .story-frame {
+    @apply relative overflow-hidden border border-white/15 bg-slate-950 shadow-2xl shadow-black/40;
+  }
+
+  .story-frame-phone {
+    @apply w-full max-w-[270px] rounded-[2rem] p-2 ring-1 ring-white/10;
+  }
+
+  .story-frame-browser,
+  .story-frame-dashboard,
+  .story-frame-pos {
+    @apply w-full rounded-2xl p-2;
+  }
+
+  .story-frame-browser {
+    @apply ring-1 ring-cyan-300/10;
+  }
+
+  .story-frame-pos {
+    @apply ring-1 ring-brand-300/15;
+  }
+
+  .story-frame-dashboard {
+    @apply ring-1 ring-violet-300/10;
+  }
+
+  .story-frame-bar {
+    @apply flex h-7 items-center border-b border-white/10 bg-slate-900 px-3;
+  }
+
+  .story-frame-screen {
+    @apply flex items-center justify-center overflow-hidden rounded-b-xl bg-slate-950;
+  }
+
+  .story-frame-phone .story-frame-screen {
+    @apply h-[520px] aspect-auto;
+  }
+
+  .story-frame-browser .story-frame-screen,
+  .story-frame-pos .story-frame-screen,
+  .story-frame-dashboard .story-frame-screen {
+    @apply aspect-[16/10];
+  }
+
+  .story-frame-screen img {
+    @apply block h-full w-full object-contain;
+  }
+}
+
+@layer components {
+  .product-demo-section {
+    @apply px-4 py-10 sm:px-6 lg:px-8 lg:py-14;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply w-full rounded-xl border border-white/10 bg-white/[.04] px-4 py-3 text-sm text-white outline-none transition-all placeholder:text-slate-500 focus:border-brand-400 focus:ring-1 focus:ring-brand-400;
+  }
+}

@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
               <CheckCircle size={32} />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Message Sent!</h2>
-            <p className="text-slate-400 mb-8">Thank you for reaching out. Our team will contact you within 24 hours.</p>
+            <p className="text-slate-400 mb-8">Thank you for reaching out. Our team will try to contact you within 5 working days.</p>
             <button className="btn-secondary px-8 py-3" onClick={() => setSubmitted(false)}>
               Send Another Message
             </button>

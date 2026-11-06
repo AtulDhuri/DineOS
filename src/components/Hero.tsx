@@ -1,56 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Check, Play, QrCode, TrendingUp } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-export const Hero: React.FC = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-padding">
-      {/* Background gradient glow */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] rounded-full bg-brand-600/20 blur-[120px] animate-[gradient-shift_8s_ease_infinite]" />
-        <div className="absolute bottom-1/4 right-[-10%] w-[600px] h-[600px] rounded-full bg-brand-700/20 blur-[120px] animate-[gradient-shift_8s_ease_infinite]" />
-      </div>
+const liveSteps = ['QR order placed', 'Kitchen is preparing', 'Bill is ready']
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brand-400">
-            <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
-            DineOS Restaurant Operations Platform
-          </div>
-
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight tracking-tight">
-            The Operating System<br />
-            <span className="gradient-text">for Modern Restaurants.</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl">
-            Prepaid Ordering. Postpaid Billing. QR Ordering. Kitchen Management.<br />
-            Zone-Based Pricing. Smart Billing. Floor Management.<br />
-            Everything Restaurant Operations Need In One Platform.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          </div>
-
-          {/* Trust badges */}
-          <div className="mt-4 flex items-center justify-between gap-4 text-xs text-slate-500 uppercase tracking-widest">
-            <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-brand-400" />
-              SOC 2 Compliant
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-brand-400" />
-              99.9% Uptime
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-brand-400" />
-              24/7 Support
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+export const Hero: React.FC = () => <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28"><div className="hero-grid" /><div className="absolute top-0 left-1/2 -translate-x-1/2 w-[780px] h-[520px] rounded-full bg-brand-600/10 blur-[130px] pointer-events-none" /><div className="container-custom relative z-10"><div className="grid lg:grid-cols-[.9fr_1.1fr] gap-14 lg:gap-16 items-center"><div><motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 rounded-full border border-brand-400/20 bg-brand-400/10 px-3 py-1.5 text-xs font-semibold text-brand-200 mb-7"><span className="w-1.5 h-1.5 rounded-full bg-brand-300 animate-pulse" />The Restaurant Operating System</motion.div><motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }} className="display-hero">Run your entire restaurant <span className="gradient-text">from one system.</span></motion.h1><motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .16 }} className="section-lede mt-6 max-w-xl">Connect the guest experience, kitchen, billing, stock, and business decisions in one operating view, so your team can keep service moving.</motion.p><motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .24 }} className="flex flex-col sm:flex-row gap-3 mt-8"><Link to="/demo" className="btn-primary"><span>See DineOS in action</span><ArrowRight size={18} /></Link><Link to="/pricing" className="btn-secondary"><span>View pricing</span></Link></motion.div><div className="flex flex-wrap gap-x-6 gap-y-3 mt-7 text-xs text-slate-400"><span className="flex items-center gap-2"><Check size={14} className="text-emerald-400" />15-minute walkthrough</span><span className="flex items-center gap-2"><Check size={14} className="text-emerald-400" />No credit card required</span></div></div><motion.div initial={{ opacity: 0, scale: .96, y: 18 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: .18, duration: .6 }} className="relative"><div className="product-window hero-window"><div className="flex items-center justify-between px-5 py-4 border-b border-white/10"><div className="flex gap-1.5"><span className="window-dot bg-red-400/70" /><span className="window-dot bg-amber-400/70" /><span className="window-dot bg-emerald-400/70" /></div><span className="text-xs text-slate-500 font-mono">app.dineos.cloud</span><span className="flex items-center gap-1.5 text-xs text-emerald-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />Live</span></div><div className="p-5 md:p-7 bg-gradient-to-br from-brand-500/10 via-transparent to-cyan-500/5"><div className="flex items-center justify-between mb-6"><div><p className="text-xs text-slate-500 uppercase tracking-widest">Illustrative workspace</p><h2 className="text-xl font-bold text-white mt-1">Your operation at a glance</h2></div><div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center"><TrendingUp size={17} className="text-brand-300" /></div></div><div className="grid grid-cols-3 gap-3 mb-5">{[['Sales overview', 'Connected', 'Live view'], ['Orders', 'In one flow', 'Real-time'], ['Prep status', 'Visible', 'At a glance']].map(([label, value, delta]) => <div key={label} className="rounded-2xl bg-slate-950/60 border border-white/10 p-3"><p className="text-[10px] text-slate-500 mb-2">{label}</p><p className="text-base md:text-lg font-bold text-white">{value}</p><p className="text-[10px] text-emerald-400 mt-1">↗ {delta}</p></div>)}</div><div className="grid md:grid-cols-[1.1fr_.9fr] gap-4"><div className="rounded-2xl bg-slate-950/60 border border-white/10 p-4"><div className="flex items-center justify-between mb-4"><p className="text-sm font-semibold text-white">Live order flow</p><span className="text-[10px] text-brand-300 uppercase tracking-wider">Today</span></div><div className="h-24 flex items-end gap-1.5">{[28, 36, 31, 49, 44, 62, 54, 70, 58, 82, 68, 92, 76, 100].map((height, i) => <motion.div key={i} initial={{ height: 0 }} animate={{ height: `${height}%` }} transition={{ delay: .4 + i * .03 }} className="flex-1 rounded-t bg-gradient-to-t from-brand-700 to-brand-300" />)}</div></div><div className="rounded-2xl bg-slate-950/60 border border-white/10 p-4"><div className="flex items-center justify-between mb-3"><p className="text-sm font-semibold text-white">Order journey</p><QrCode size={16} className="text-brand-300" /></div><div className="space-y-3">{liveSteps.map((step, i) => <div key={step} className="flex items-center gap-2.5"><span className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-brand-300 animate-pulse' : 'bg-emerald-400'}`} /><span className="text-xs text-slate-300">{step}</span></div>)}</div></div></div></div></div><Link to="/demo" className="absolute -bottom-6 -left-6 hidden md:flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/90 backdrop-blur-xl px-4 py-3 shadow-2xl hover:border-brand-300/30 transition-colors"><div className="w-8 h-8 rounded-lg bg-brand-400/15 flex items-center justify-center"><Play size={14} className="fill-brand-300 text-brand-300" /></div><div><p className="text-xs font-semibold text-white">See the product tour</p><p className="text-[10px] text-slate-500">Start with a walkthrough</p></div></Link></motion.div></div><div className="mt-20 pt-7 border-t border-white/10"><p className="text-center text-xs uppercase tracking-[.22em] text-slate-500 mb-5">One system for the whole operation</p><div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-400"><span>Orders</span><span>Kitchen</span><span>Billing</span><span>Inventory</span><span>Reports</span><span>Franchises</span></div></div></div></section>
 
 export default Hero

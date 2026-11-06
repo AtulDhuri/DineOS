@@ -4,6 +4,7 @@ import { SectionHeader } from '../components/ui/SectionHeader'
 import { motion } from 'framer-motion'
 import { Globe, CheckCircle, ShieldCheck, Clock, ArrowRight, Layout } from 'lucide-react'
 import { CustomSelect } from '../components/ui/CustomSelect'
+import { Link } from 'react-router-dom'
 
 type Currency = 'USD' | 'INR'
 type Billing = 'monthly' | 'annual'
@@ -63,7 +64,7 @@ const MULTI_PRICING: Record<Currency, {
     baseAnnual: '₹79,990',
     baseSave: 'Save ₹15,998 per year',
     additionalMonthly: '₹1,999',
-    additionalAnnual: '₹29,990',
+    additionalAnnual: '₹19,990',
     additionalSave: 'Save ₹3,998 per year',
   },
 }
@@ -262,9 +263,7 @@ export const Pricing: React.FC = () => {
 
                   {!isAnnual && (
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="text-xs text-brand-400 font-medium">
-                        {prices.save.replace('per year', 'per month')}
-                      </span>
+                      <span className="text-xs text-slate-400 font-medium">Monthly billing · cancel anytime</span>
                     </div>
                   )}
                 </div>
@@ -285,7 +284,7 @@ export const Pricing: React.FC = () => {
                     </motion.li>
                   ))}
                 </ul>
-
+                <Link to="/demo" className="btn-primary w-full">Talk to sales <ArrowRight size={16} /></Link>
                 </div>
             </motion.div>
 
@@ -383,6 +382,7 @@ export const Pricing: React.FC = () => {
                 </ul>
 
                 <div className="flex flex-col gap-2">
+                  <Link to="/demo" className="btn-primary w-full">Plan a multi-outlet demo <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </motion.div>

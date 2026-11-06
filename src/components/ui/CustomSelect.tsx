@@ -43,11 +43,15 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-slate-300 mb-2">{label}</label>
+        <label htmlFor={`${name}-select`} className="block text-sm font-medium text-slate-300 mb-2">{label}</label>
       )}
       <div className="relative" onClick={(e) => e.stopPropagation()}>
         <button
           type="button"
+          id={`${name}-select`}
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+          aria-label={label || name}
           onClick={() => setIsOpen(!isOpen)}
           className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all ${className} ${error ? 'border-red-500' : ''}`}
         >
@@ -56,11 +60,13 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
         </button>
 
         {isOpen && (
-          <div className="absolute z-50 w-full mt-1 rounded-xl bg-slate-900/95 border border-white/10 shadow-2xl overflow-hidden max-h-60 overflow-y-auto">
+          <div role="listbox" aria-label={label || name} className="absolute z-50 w-full mt-1 rounded-xl bg-slate-900/95 border border-white/10 shadow-2xl overflow-hidden max-h-60 overflow-y-auto">
             {options.map((opt) => (
               <button
                 key={opt.value}
                 type="button"
+                role="option"
+                aria-selected={selected === opt.value}
                 onClick={() => handleSelect(opt.value)}
                 className={`w-full px-4 py-3 text-sm text-left transition-colors ${
                   selected === opt.value

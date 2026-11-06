@@ -14,7 +14,7 @@ const solutions = [
     border: 'border-brand-500/20',
     challenges: ['Manual order taking slows service', 'Kitchen tickets get lost', 'No table status visibility'],
     solution: 'QR ordering, KDS kitchen tickets, and real-time floor management for full-service restaurants.',
-    outcome: '25% faster table turnover, 40% fewer order errors.',
+    outcome: 'Connect ordering, kitchen flow, and table visibility in one operation.',
   },
   {
     title: 'Hotels',
@@ -34,7 +34,7 @@ const solutions = [
     border: 'border-orange-500/20',
     challenges: ['High turnover needs fast payment', 'Limited staff for order taking', 'Peak hour bottlenecks'],
     solution: 'Prepaid ordering with QR codes — customers pay before the kitchen starts.',
-    outcome: '30% faster service during peak hours, reduced labor costs.',
+    outcome: 'Keep peak-hour ordering and payment moving with fewer handoffs.',
   },
   {
     title: 'Food Courts',
@@ -54,7 +54,7 @@ const solutions = [
     border: 'border-purple-500/20',
     challenges: ['Premium guest expectations', 'Wine and specialty item management', 'Table turnover without rushing'],
     solution: 'Postpaid ordering, VIP zone pricing, and premium menu visibility controls.',
-    outcome: 'Elevated guest experience with premium pricing per zone.',
+    outcome: 'Give premium service a clearer operating workflow.',
   },
   {
     title: 'Lounges',

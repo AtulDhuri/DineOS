@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Mail, Phone, MapPin, Clock, Users } from 'lucide-react'
+import { ArrowRight, Mail, Phone, MapPin, Clock, Users, MessageSquare } from 'lucide-react'
 import { Button } from './Button'
 import { CustomSelect } from './CustomSelect'
 
@@ -41,7 +41,10 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       name: formData.get('name'),
       email: formData.get('email'),
       inquiryType: businessType || 'demo',
-      message: `Restaurant: ${formData.get('restaurant')}\nPhone: ${formData.get('phone')}\nBusiness Type: ${businessType}`,
+      message: `Restaurant: ${formData.get('restaurant')}
+Phone: ${formData.get('phone')}
+Business Type: ${businessType}
+Additional Details: ${formData.get('details') || 'Not provided'}`,
     }
 
     try {
@@ -57,7 +60,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       }
 
       setStatus('success')
-      setStatusMessage('Thank you! Your request has been sent.')
+      setStatusMessage('Thanks — your request has been sent. Our team will try to reach you within 5 working days to arrange your walkthrough.')
       setBusinessType('')
       formRef.current?.reset()
     } catch (error) {
@@ -81,13 +84,13 @@ export const LeadForm: React.FC<LeadFormProps> = ({
       </div>
 
       {status === 'success' && (
-        <div className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-center">
+        <div role="status" aria-live="polite" className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-center">
           {statusMessage || 'Request submitted successfully!'}
         </div>
       )}
 
       {status === 'error' && (
-        <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-center">
+        <div role="alert" aria-live="assertive" className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-center">
           {statusMessage || 'Something went wrong. Please try again.'}
         </div>
       )}
@@ -168,12 +171,25 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           required
         />
 
+        <div className="relative">
+          <div className="absolute left-3 top-3 text-slate-500">
+            <MessageSquare size={18} />
+          </div>
+          <textarea
+            name="details"
+            aria-label="Additional details"
+            placeholder="Tell us about your operation, preferred demo timing, outlets, or questions (optional)"
+            rows={3}
+            className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all resize-y"
+          />
+        </div>
+
         <Button type="submit" variant="primary" size="lg" className="w-full" isLoading={isSubmitting}>
           {buttonText} <ArrowRight size={20} />
         </Button>
 
         <p className="text-xs text-center text-slate-500 mt-2">
-          No credit card required. 15-minute demo.
+          No credit card required. Our team will try to reach you within 5 working days to arrange a 15-minute walkthrough.
         </p>
       </form>
     </motion.div>

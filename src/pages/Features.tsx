@@ -2,14 +2,15 @@ import React from 'react'
 import { SEO } from '../components/ui/SEO'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { motion } from 'framer-motion'
-import { Smartphone, CreditCard, Users, Shield, Clock, Layout, Eye, Flame } from 'lucide-react'
+import { Smartphone, CreditCard, Users, Shield, Clock, Layout, Eye, Flame, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const features = [
   {
     title: 'QR Ordering',
     problem: 'Customers wait for menus and servers, slowing down table turnover.',
     solution: 'Scan a QR code at the table to instantly open the digital menu and place orders.',
-    benefit: '30% faster table turnover, reduced labor costs.',
+    benefit: 'Reduce waiting and keep service moving.',
     icon: Smartphone,
     color: 'text-brand-400',
   },
@@ -17,7 +18,7 @@ const features = [
     title: 'Prepaid Ordering',
     problem: 'Payment collection at the table delays kitchen start and slows service.',
     solution: 'Collect payment before the kitchen starts preparing — ideal for cafes and QSR.',
-    benefit: 'Faster service, no bill collection at table.',
+    benefit: 'Start preparation sooner with a clear payment flow.',
     icon: CreditCard,
     color: 'text-green-400',
   },
@@ -25,7 +26,7 @@ const features = [
     title: 'Postpaid Ordering',
     problem: 'Full-service restaurants need flexible payment — serve first, pay later.',
     solution: 'Order now, pay at the end with bill request workflow and split bill support.',
-    benefit: 'Premium guest experience for fine dining.',
+    benefit: 'Give guests a flexible way to close the table.',
     icon: CreditCard,
     color: 'text-blue-400',
   },
@@ -33,7 +34,7 @@ const features = [
     title: 'Zone Based Pricing',
     problem: 'Same item priced the same across all zones misses revenue opportunities.',
     solution: 'Set different prices for AC, VIP, Lounge, and Outdoor zones — auto-detected by table.',
-    benefit: 'Higher revenue from premium seating areas.',
+    benefit: 'Protect premium offerings and pricing logic.',
     icon: Layout,
     color: 'text-purple-400',
   },
@@ -41,7 +42,7 @@ const features = [
     title: 'Zone Based Menu Visibility',
     problem: 'Premium items should not be visible in casual zones.',
     solution: 'Control which menu items appear in which zones - VIP exclusives stay exclusive.',
-    benefit: 'Protect premium offerings and brand positioning.',
+    benefit: 'Keep premium offerings visible to the right guests.',
     icon: Eye,
     color: 'text-pink-400',
   },
@@ -49,7 +50,7 @@ const features = [
     title: 'Kitchen Dashboard',
     problem: 'Paper tickets get lost, and kitchen staff cannot track prep status.',
     solution: 'Real-time KDS with ticket tracking, prep timers, and order status updates.',
-    benefit: 'Zero lost orders, faster prep times.',
+    benefit: 'Keep ticket flow visible from order to service.',
     icon: Flame,
     color: 'text-orange-400',
   },
@@ -57,7 +58,7 @@ const features = [
     title: 'Waiter Dashboard',
     problem: 'Waiters waste time walking between tables and kitchen to check status.',
     solution: 'Live table status, ready order alerts, call waiter requests, and bill management.',
-    benefit: 'Better guest experience, faster service.',
+    benefit: 'Give the floor team a clearer service workflow.',
     icon: Users,
     color: 'text-teal-400',
   },
@@ -65,7 +66,7 @@ const features = [
     title: 'Floor Management',
     problem: 'No visibility into which tables are available, occupied, or waiting for bill.',
     solution: 'Interactive floor map with color-coded table status updates in real-time.',
-    benefit: 'Maximize table utilization and revenue.',
+    benefit: 'Keep table utilization visible during service.',
     icon: Layout,
     color: 'text-indigo-400',
   },
@@ -73,7 +74,7 @@ const features = [
     title: 'Table Mapping',
     problem: 'Customers manually enter table numbers, causing errors.',
     solution: 'QR scan automatically detects zone and table — no manual entry required.',
-    benefit: 'Zero errors, instant table identification.',
+    benefit: 'Reduce table-entry mistakes at the start of the order.',
     icon: Shield,
     color: 'text-emerald-400',
   },
@@ -81,7 +82,7 @@ const features = [
     title: 'Menu Availability Control',
     problem: '86d items still appear on digital menus, disappointing guests.',
     solution: 'Kitchen staff mark items unavailable - customer menus update instantly without refresh.',
-    benefit: 'No more disappointed guests or refunds.',
+    benefit: 'Keep unavailable items from becoming service problems.',
     icon: Clock,
     color: 'text-red-400',
   },
@@ -164,8 +165,7 @@ export const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">See All Features in Action</h2>
           <p className="text-slate-400 mb-8">Book a personalized demo to see how DineOS transforms your specific restaurant operations.</p>
-          <div className="flex flex-col gap-2">
-          </div>
+                  <Link to="/demo" className="btn-primary">See DineOS in action <ArrowRight size={18} /></Link>
         </div>
       </section>
     </div>
