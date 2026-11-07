@@ -11,10 +11,8 @@ import customerPreparing from '../assets/screenshots/customer/sequence/6.jpeg'
 import customerReady from '../assets/screenshots/customer/sequence/7.jpeg'
 import customerServed from '../assets/screenshots/customer/sequence/8.jpeg'
 import customerPay from '../assets/screenshots/customer/sequence/9.jpeg'
-import kitchenDashboard from '../assets/screenshots/kitchen/03-display.png'
 import kitchenPreparation from '../assets/screenshots/kitchen/Order_arrvied.png'
-import billingDashboard from '../assets/screenshots/manager/03-dashboard.png'
-import managerDashboard from '../assets/screenshots/manager/04-restaurant-orders.png'
+import billingDashboard from '../assets/screenshots/manager/04-restaurant-orders.png'
 import franchiseDashboard from '../assets/screenshots/admin/dahsboard1.png'
 
 type FrameType = 'phone' | 'browser' | 'pos' | 'dashboard'
@@ -31,10 +29,8 @@ const stages: StoryStage[] = [
   { role: 'Customer', label: 'Order ready', detail: 'The customer view updates when the kitchen marks the order ready.', image: customerReady, frame: 'phone' },
   { role: 'Customer', label: 'Order served', detail: 'The completed order remains visible in the guest journey.', image: customerServed, frame: 'phone' },
   { role: 'Customer', label: 'Pay bill', detail: 'The journey closes with the customer payment screen.', image: customerPay, frame: 'phone' },
-  { role: 'Kitchen', label: 'Kitchen dashboard', detail: 'The kitchen team receives the order in its desktop workspace.', image: kitchenDashboard, frame: 'browser' },
   { role: 'Kitchen', label: 'Order preparation', detail: 'The kitchen moves the order through preparation and service.', image: kitchenPreparation, frame: 'browser', transition: 'Order ready' },
-  { role: 'Billing / POS', label: 'Billing and payment', detail: 'The manager dashboard shows the open table bill, payment status, receipt action, and mark-paid workflow.', image: billingDashboard, frame: 'pos', transition: 'Transaction complete' },
-  { role: 'Manager', label: 'Manager dashboard', detail: 'Managers get a live operating view of restaurant activity.', image: managerDashboard, frame: 'dashboard' },
+  { role: 'Manager', label: 'Manager dashboard', detail: 'Managers review restaurant activity, open bills, receipts, and payment status from one workspace.', image: billingDashboard, frame: 'dashboard' },
   { role: 'Admin', label: 'Admin dashboard', detail: 'The admin view brings the wider business picture into focus for central decisions.', image: franchiseDashboard, frame: 'dashboard', transition: 'Business insights updated' },
 ]
 
@@ -50,7 +46,7 @@ interface ProductDemoProps {
 }
 
 export const ProductDemo: React.FC<ProductDemoProps> = ({ compact = false }) => {
-  const activeStages = compact ? [stages[3], stages[10], stages[12], stages[13], stages[14]] : stages
+  const activeStages = compact ? [stages[3], stages[10], stages[11], stages[12]] : stages
   const [stageIndex, setStageIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [reducedMotion, setReducedMotion] = useState(false)

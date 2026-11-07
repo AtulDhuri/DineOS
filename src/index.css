@@ -216,6 +216,12 @@
   .story-frame-screen img {
     @apply block h-full w-full object-contain;
   }
+
+  .story-frame-browser .story-frame-screen img,
+  .story-frame-pos .story-frame-screen img,
+  .story-frame-dashboard .story-frame-screen img {
+    @apply object-contain object-top;
+  }
 }
 
 @layer components {
