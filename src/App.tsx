@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { Navbar } from './components/layout/Navbar'
 import { Footer } from './components/layout/Footer'
@@ -13,10 +13,21 @@ import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { Blog } from './pages/Blog'
 
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation()
+
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
+
+  return null
+}
+
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 pt-16">
       <Navbar />
+      <ScrollToTop />
       {children}
       <Footer />
     </div>
