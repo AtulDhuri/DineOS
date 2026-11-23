@@ -27,8 +27,8 @@ export const Navbar: React.FC<{ scrolled?: boolean }> = ({ scrolled = false }) =
   return (
     <motion.header initial={{ y: -80 }} animate={{ y: 0 }} className={`fixed inset-x-0 top-0 z-50 border-b transition-all ${hasScrolled || open ? 'border-slate-200 bg-white/90 shadow-sm backdrop-blur-xl' : 'border-transparent bg-white/60 backdrop-blur-md'}`}>
       <div className="container-custom flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" aria-label="DineOS home" className="-ml-2 flex items-center">
-          <img src={logo} alt="DineOS" width={1024} height={433} className="h-14 w-auto object-contain" />
+        <Link to="/" aria-label="DineOS home" className="-ml-4 flex items-center">
+          <img src={logo} alt="DineOS" width={1024} height={433} className="-my-2 h-20 w-auto object-contain" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {links.map((link) => (
