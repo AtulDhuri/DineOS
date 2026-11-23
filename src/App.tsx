@@ -15,11 +15,18 @@ import { Blog } from './pages/Blog'
 import { NotFound } from './pages/NotFound'
 
 const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   React.useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)))
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        return
+      }
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [pathname])
+  }, [pathname, hash])
 
   return null
 }
@@ -29,7 +36,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] pt-16">
       <Navbar />
       <ScrollToTop />
-      {children}
+      <main className="[&>*>section:first-of-type]:!pt-10 lg:[&>*>section:first-of-type]:!pt-12">{children}</main>
       <Footer />
     </div>
   )

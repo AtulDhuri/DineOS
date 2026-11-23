@@ -165,7 +165,7 @@ export const Features: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">See All Features in Action</h2>
           <p className="text-[#64748B] mb-8">Book a personalized demo to see how DineOS transforms your specific restaurant operations.</p>
-                  <Link to="/demo" className="btn-primary">See DineOS in action <ArrowRight size={18} /></Link>
+                  <Link to="/demo#booking" className="btn-primary">See DineOS in action <ArrowRight size={18} /></Link>
         </div>
       </section>
     </div>

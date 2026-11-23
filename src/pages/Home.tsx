@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
             <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl">Restaurant Operations, <span className="bg-gradient-to-r from-brand-500 to-brand-300 bg-clip-text text-transparent">Simplified.</span></h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#64748B] sm:text-lg">Scan QR, Order Food, Track Kitchen Status, Manage Service Requests, and Run Your Restaurant from a Single Platform.</p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link to="/demo" className="btn-primary">Book a Demo <ArrowRight size={18} /></Link>
+              <Link to="/demo#booking" className="btn-primary">Book a Demo <ArrowRight size={18} /></Link>
               <Link to="/features" className="btn-secondary">View Features</Link>
             </div>
           </div>
@@ -95,7 +95,7 @@ export const Home: React.FC = () => {
             <p className="text-sm font-bold uppercase tracking-[.18em] text-brand-500">Benefits</p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">Run a calmer, faster floor</h2>
             <p className="mt-4 max-w-md text-[#64748B]">DineOS removes the handoffs that slow service so your team can focus on guests.</p>
-            <Link to="/demo" className="mt-8 inline-flex items-center gap-2 font-bold text-brand-600">See it in your restaurant <ArrowRight size={17} /></Link>
+            <Link to="/demo#booking" className="mt-8 inline-flex items-center gap-2 font-bold text-brand-600">See it in your restaurant <ArrowRight size={17} /></Link>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
             {benefits.map(({ title, copy, icon: Icon }, i) => (
@@ -146,7 +146,7 @@ export const Home: React.FC = () => {
                 <p className="mt-6 flex items-baseline gap-1"><span className="text-5xl font-black tracking-tight">{plan.price}</span><span className="text-sm text-[#64748B]">{plan.unit}</span></p>
                 <p className="mt-1 text-xs text-[#64748B]">{plan.setup}</p>
                 <ul className="mt-6 flex-1 space-y-3">{plan.items.map((item) => <li key={item} className="flex items-center gap-3 text-sm"><Check size={16} className="shrink-0 text-[#22C55E]" />{item}</li>)}</ul>
-                <Link to="/demo" className={`mt-8 ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>{plan.popular ? 'Book a Demo' : 'Talk to sales'}</Link>
+                <Link to="/demo#booking" className={`mt-8 ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>{plan.popular ? 'Book a Demo' : 'Talk to sales'}</Link>
               </div>
             ))}
           </div>
@@ -174,7 +174,7 @@ export const Home: React.FC = () => {
         <div className="container-custom relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 via-brand-500 to-brand-300 px-6 py-16 text-center text-white shadow-2xl shadow-brand-500/25 sm:px-12">
           <h2 className="mx-auto max-w-2xl text-3xl font-black tracking-tight sm:text-5xl">See DineOS run your restaurant</h2>
           <p className="mx-auto mt-4 max-w-xl text-white/90">A practical 15-minute walkthrough. No credit card required.</p>
-          <Link to="/demo" className="btn-primary mt-8">Book a Demo <ArrowRight size={18} /></Link>
+          <Link to="/demo#booking" className="btn-primary mt-8">Book a Demo <ArrowRight size={18} /></Link>
         </div>
       </section>
     </div>

@@ -11,7 +11,7 @@ export const FinalCTA: React.FC = () => (
         <p className="eyebrow !text-brand-700">Ready when you are</p>
         <h2 className="display-heading mx-auto max-w-3xl !text-slate-950">Give your restaurant a <span className="text-brand-700">better operating system.</span></h2>
         <p className="section-lede mx-auto mt-5 max-w-2xl !text-slate-700">See how DineOS can help your team serve faster, reduce mistakes, and run every outlet with more confidence.</p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link to="/demo" className="btn-primary">Book a demo <ArrowRight size={18} /></Link><Link to="/pricing" className="btn-secondary "><Play size={16} /> Explore plans</Link></div>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link to="/demo#booking" className="btn-primary">Book a demo <ArrowRight size={18} /></Link><Link to="/pricing" className="btn-secondary "><Play size={16} /> Explore plans</Link></div>
         <p className="mt-5 text-xs font-medium !text-slate-700">A practical 15-minute walkthrough. No pressure, no credit card.</p>
       </div>
     </div>

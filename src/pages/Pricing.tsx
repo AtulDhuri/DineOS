@@ -284,7 +284,7 @@ export const Pricing: React.FC = () => {
                     </motion.li>
                   ))}
                 </ul>
-                <Link to="/demo" className="btn-primary w-full">Talk to sales <ArrowRight size={16} /></Link>
+                <Link to="/demo#booking" className="btn-primary w-full">Talk to sales <ArrowRight size={16} /></Link>
                 </div>
             </motion.div>
 
@@ -382,7 +382,7 @@ export const Pricing: React.FC = () => {
                 </ul>
 
                 <div className="flex flex-col gap-2">
-                  <Link to="/demo" className="btn-primary w-full">Plan a multi-outlet demo <ArrowRight size={16} /></Link>
+                  <Link to="/demo#booking" className="btn-primary w-full">Plan a multi-outlet demo <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </motion.div>

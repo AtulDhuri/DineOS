@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/DineOS_logo_final/DineOS.png'
 
 const groups = [
-  { title: 'Product', links: [['Platform', '/product'], ['Features', '/features'], ['Pricing', '/pricing']] },
+  { title: 'Product', links: [['Features', '/features'], ['Pricing', '/pricing']] },
   { title: 'Solutions', links: [['Restaurants & Hotels', '/solutions'], ['Live demo', '/demo'], ['About DineOS', '/about']] },
-  { title: 'Company', links: [['Contact', '/contact'], ['Resources', '/blog'], ['Book a Demo', '/demo']] },
+  { title: 'Company', links: [['Contact', '/contact'], ['Book a Demo', '/demo#booking']] },
 ]
 
 export const Footer: React.FC = () => (
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => (
       </div>
       <div className="mt-14 flex flex-col gap-4 border-t border-[#E2E8F0] pt-6 text-xs text-[#64748B] sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} DineOS. All rights reserved.</p>
-        <div className="flex items-center gap-5"><span>Privacy Policy</span><span>Terms</span><Link to="/demo" className="flex items-center gap-1 font-semibold text-brand-600">Book a walkthrough <ArrowUpRight size={13} /></Link></div>
+        <div className="flex items-center gap-5"><span>Privacy Policy</span><span>Terms</span><Link to="/demo#booking" className="flex items-center gap-1 font-semibold text-brand-600">Book a walkthrough <ArrowUpRight size={13} /></Link></div>
       </div>
     </div>
   </footer>

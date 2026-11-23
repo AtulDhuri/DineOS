@@ -26,7 +26,7 @@ export const OperatingLoop: React.FC = () => (
           <p className="eyebrow text-brand-700">The connected operating loop</p>
           <h2 className="display-heading !text-slate-950">Every handoff is visible, from scan to <span className="text-brand-600">settlement.</span></h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">DineOS connects the guest, kitchen, service team, and manager in the same workflow. That means fewer calls across the floor and fewer places for an order to disappear.</p>
-          <Link to="/demo" className="inline-flex items-center gap-2 mt-7 font-semibold text-slate-950 hover:text-brand-700">Walk through the workflow <ArrowRight size={17} /></Link>
+          <Link to="/demo#booking" className="inline-flex items-center gap-2 mt-7 font-semibold text-slate-950 hover:text-brand-700">Walk through the workflow <ArrowRight size={17} /></Link>
         </div>
         <div className="grid sm:grid-cols-2 gap-3">
           {stages.map(({ label, title, copy, icon: Icon, color }, index) => (

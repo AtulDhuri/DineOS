@@ -15,6 +15,7 @@ export const Navbar: React.FC<{ scrolled?: boolean }> = ({ scrolled = false }) =
   const [open, setOpen] = useState(false)
   const [hasScrolled, setHasScrolled] = useState(scrolled)
   const location = useLocation()
+  const onDemoPage = location.pathname === '/demo'
 
   useEffect(() => {
     const onScroll = () => setHasScrolled(window.scrollY > 8)
@@ -35,9 +36,7 @@ export const Navbar: React.FC<{ scrolled?: boolean }> = ({ scrolled = false }) =
             <Link key={link.href} to={link.href} className={`text-sm font-semibold transition-colors ${location.pathname === link.href ? 'text-brand-600' : 'text-slate-500 hover:text-slate-900'}`}>{link.label}</Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Link to="/demo" className="btn-primary !px-5 !py-2.5 !text-sm">Book a Demo <ArrowRight size={15} /></Link>
-        </div>
+        <div className={`hidden md:block ${onDemoPage ? 'invisible' : ''}`} aria-hidden={onDemoPage}><Link to="/demo#booking" tabIndex={onDemoPage ? -1 : undefined} className="btn-primary !px-5 !py-2.5 !text-sm">Book a Demo <ArrowRight size={15} /></Link></div>
         <button type="button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} onClick={() => setOpen((v) => !v)} className="flex h-11 w-11 items-center justify-center rounded-xl text-slate-900 hover:bg-brand-50 md:hidden">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -49,7 +48,7 @@ export const Navbar: React.FC<{ scrolled?: boolean }> = ({ scrolled = false }) =
               {links.map((link) => (
                 <Link key={link.href} to={link.href} className="rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600">{link.label}</Link>
               ))}
-              <Link to="/demo" className="btn-primary mt-2">Book a Demo <ArrowRight size={16} /></Link>
+              {!onDemoPage && <Link to="/demo#booking" className="btn-primary mt-2">Book a Demo <ArrowRight size={16} /></Link>}
             </div>
           </motion.nav>
         )}

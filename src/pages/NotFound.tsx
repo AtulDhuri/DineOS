@@ -10,7 +10,7 @@ export const NotFound: React.FC = () => (
       <p className="section-lede mt-5">The page may have moved. Return to the platform overview or book a walkthrough with the DineOS team.</p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <Link to="/" className="btn-primary"><ArrowLeft size={17} /> Back to home</Link>
-        <Link to="/demo" className="btn-secondary">Book a demo <ArrowRight size={17} /></Link>
+        <Link to="/demo#booking" className="btn-secondary">Book a demo <ArrowRight size={17} /></Link>
       </div>
     </div>
   </main>
