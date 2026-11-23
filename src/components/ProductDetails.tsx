@@ -28,7 +28,7 @@ export const ProductDetails: React.FC = () => {
                 <span className="text-xs font-bold text-white">Veg</span>
               </div>
               <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur border border-white/30">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                <span className="w-2 h-2 rounded-full bg-brand-400" />
                 <span className="text-xs font-bold text-white">25 min</span>
               </div>
             </motion.div>

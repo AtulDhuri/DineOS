@@ -36,7 +36,7 @@ export const About: React.FC = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO
         title="About DineOS — The Operating System for Modern Restaurants"
         description="Learn about DineOS, our mission, team, and values. The Operating System for Modern Restaurants."
@@ -55,13 +55,13 @@ export const About: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="glass-card rounded-3xl p-8 md:p-12 border border-white/10"
+              className="glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0]"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">The Operating System for Modern Restaurants</h2>
-              <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4">The Operating System for Modern Restaurants</h2>
+              <p className="text-[#64748B] text-lg leading-relaxed mb-6">
                 DineOS was born from a simple observation: restaurants are using outdated systems, paper tickets, and disjointed tools to manage their operations. We set out to change that.
               </p>
-              <p className="text-slate-400 text-lg leading-relaxed">
+              <p className="text-[#64748B] text-lg leading-relaxed">
                 DineOS is not just a QR menu. It's a complete Restaurant Operations Platform that handles prepaid ordering, postpaid billing, kitchen management, waiter operations, zone management, dynamic pricing, and analytics — all in one unified platform.
               </p>
             </motion.div>
@@ -70,7 +70,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Stats */}
-      <section className="bg-slate-900/30 section-padding">
+      <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -81,8 +81,8 @@ export const About: React.FC = () => {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
-                <p className="text-sm text-slate-400">{stat.label}</p>
+                <div className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-2">{stat.value}</div>
+                <p className="text-sm text-[#64748B]">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -93,8 +93,8 @@ export const About: React.FC = () => {
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Values</h2>
-            <p className="text-slate-400">What guides everything we build.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Our Values</h2>
+            <p className="text-[#64748B]">What guides everything we build.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((val, i) => (
@@ -104,13 +104,13 @@ export const About: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="glass-card p-8 rounded-2xl border border-white/10 text-center"
+                className="glass-card p-8 rounded-2xl border border-[#E2E8F0] text-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center mx-auto mb-4 text-brand-400 text-xl">
+                <div className="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center mx-auto mb-4 text-brand-600 text-xl">
                   <val.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{val.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{val.desc}</p>
+                <h3 className="text-lg font-bold text-[#0F172A] mb-3">{val.title}</h3>
+                <p className="text-sm text-[#64748B] leading-relaxed">{val.desc}</p>
               </motion.div>
             ))}
           </div>

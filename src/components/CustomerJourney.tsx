@@ -132,14 +132,14 @@ const roleConfigs: Record<string, {
     subtitle: '10 steps from QR scan to payment close',
     steps: customerPostpaidSteps,
     icon: CreditCard,
-    color: 'text-blue-400',
+    color: 'text-brand-400',
   },
   kitchen: {
     title: 'Kitchen',
     subtitle: '6 steps from new order to force-close',
     steps: kitchenSteps,
     icon: Layout,
-    color: 'text-orange-400',
+    color: 'text-brand-400',
   },
   manager: {
     title: 'Manager',
@@ -159,38 +159,38 @@ const roleConfigs: Record<string, {
 
 const stepColors: Record<string, string> = {
   'QR Scan': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
-  'Token Resolved': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
-  'Table+Zone Detected': 'text-indigo-400 bg-indigo-500/20 border border-indigo-500/30',
+  'Token Resolved': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Table+Zone Detected': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Session Minted': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
   'Session Resumed': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
   'Menu with Zone Prices': 'text-purple-400 bg-purple-500/20 border border-purple-500/30',
   'Add to Cart': 'text-green-400 bg-green-500/20 border border-green-500/30',
   'UPI Payment': 'text-green-400 bg-green-500/20 border border-green-500/30',
-  'Place Order': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
-  'Order to Kitchen': 'text-orange-400 bg-orange-500/20 border border-orange-500/30',
+  'Place Order': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Order to Kitchen': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Live Tracker': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
   'Session Closed': 'text-green-400 bg-green-500/20 border border-green-500/30',
   'Payment → Session Closed': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
-  'New Order + Sound': 'text-orange-400 bg-orange-500/20 border border-orange-500/30',
-  'Grouped by Table': 'text-indigo-400 bg-indigo-500/20 border border-indigo-500/30',
-  'Elapsed Timer': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
+  'New Order + Sound': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Grouped by Table': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Elapsed Timer': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Advance Status': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Reminder/Danger Alerts': 'text-red-400 bg-red-500/20 border border-red-500/30',
   'Cancel Order / Force-Close': 'text-red-400 bg-red-500/20 border border-red-500/30',
   'Realtime Live Feed': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
-  'KPI Bar': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
-  'Delayed Panel': 'text-yellow-400 bg-yellow-500/20 border border-yellow-500/30',
+  'KPI Bar': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Delayed Panel': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Mark PAID': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
   'Cancel Order': 'text-red-400 bg-red-500/20 border border-red-500/30',
   'Print Receipt': 'text-purple-400 bg-purple-500/20 border border-purple-500/30',
-  'Filter+Export': 'text-indigo-400 bg-indigo-500/20 border border-indigo-500/30',
+  'Filter+Export': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Order-Ready Sound': 'text-green-400 bg-green-500/20 border border-green-500/30',
   'Setup Wizard': 'text-pink-400 bg-pink-500/20 border border-pink-500/30',
   'PDF/JSON Menu Upload': 'text-purple-400 bg-purple-500/20 border border-purple-500/30',
-  'Tables+Zones': 'text-indigo-400 bg-indigo-500/20 border border-indigo-500/30',
-  'Availability Toggles': 'text-yellow-400 bg-yellow-500/20 border border-yellow-500/30',
+  'Tables+Zones': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Availability Toggles': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'QR Generation': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
-  'Staff Management': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
+  'Staff Management': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Analytics': 'text-purple-400 bg-purple-500/20 border border-purple-500/30',
 }
 
@@ -234,8 +234,8 @@ export const CustomerJourney: React.FC = () => {
   //   //       >
   //   //         {[
   //   //           { id: 'customer-prepaid', label: 'Customer — Prepaid', color: 'text-green-400' },
-  //   //           { id: 'customer-postpaid', label: 'Customer — Postpaid', color: 'text-blue-400' },
-  //   //           { id: 'kitchen', label: 'Kitchen', color: 'text-orange-400' },
+  //   //           { id: 'customer-postpaid', label: 'Customer — Postpaid', color: 'text-brand-400' },
+  //   //           { id: 'kitchen', label: 'Kitchen', color: 'text-brand-400' },
   //   //           { id: 'manager', label: 'Manager', color: 'text-purple-400' },
   //   //           { id: 'admin', label: 'Admin', color: 'text-pink-400' },
   //   //         ].map((r) => (
@@ -352,7 +352,7 @@ export const CustomerJourney: React.FC = () => {
   //   //         </div>
   //   //         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
   //   //           <p className="text-xs text-slate-300 mb-2">Status Change</p>
-  //   //           <p className="text-xs text-blue-400 font-mono">Kitchen → Customer</p>
+  //   //           <p className="text-xs text-brand-400 font-mono">Kitchen → Customer</p>
   //   //         </div>
   //   //         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
   //   //           <p className="text-xs text-slate-300 mb-2">Cancellation</p>

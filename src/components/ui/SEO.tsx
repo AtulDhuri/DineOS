@@ -16,11 +16,11 @@ export const SEO: React.FC<SEOProps> = ({
   image = 'https://dineos.com/og-image.jpg',
   type = 'website',
 }) => {
-  const fullTitle = title + ' | DineOS'
+  const fullTitle = title.includes('DineOS') ? title : `${title} | DineOS`
   const canonicalUrl = `https://dineos.com${path}`
 
   return (
-    <Helmet titleTemplate="%s | DineOS">
+    <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta

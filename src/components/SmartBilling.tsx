@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 
 const paymentMethods = [
   { name: 'UPI', icon: '📱', desc: 'Google Pay, PhonePe, Paytm', color: 'text-green-400' },
-  { name: 'Card', icon: '💳', desc: 'Visa, Mastercard, Amex', color: 'text-blue-400' },
-  { name: 'Cash', icon: '💵', desc: 'Physical currency', color: 'text-yellow-400' },
+  { name: 'Card', icon: '💳', desc: 'Visa, Mastercard, Amex', color: 'text-brand-400' },
+  { name: 'Cash', icon: '💵', desc: 'Physical currency', color: 'text-brand-400' },
   { name: 'Digital Wallet', icon: '👛', desc: 'Apple Pay, Google Wallet', color: 'text-purple-400' },
 ]
 
@@ -45,10 +45,10 @@ export const SmartBilling: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="glass-card rounded-3xl p-8 border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+            className="glass-card rounded-3xl p-8 border-brand-500/30 shadow-[0_0_30px_rgba(59,130,246,0.15)]"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl">
+              <div className="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl">
                 🧾
               </div>
               <h3 className="text-2xl font-bold text-white">Postpaid Billing</h3>
@@ -57,7 +57,7 @@ export const SmartBilling: React.FC = () => {
             <div className="space-y-3">
               {['Bill on request', 'Split bill support', 'Multiple payment methods', 'Digital invoice'].map((f) => (
                 <div key={f} className="flex items-center gap-2 text-sm text-slate-300">
-                  <span className="text-blue-400">✓</span> {f}
+                  <span className="text-brand-400">✓</span> {f}
                 </div>
               ))}
             </div>
@@ -92,7 +92,7 @@ export const SmartBilling: React.FC = () => {
               <span>👨‍💼</span> <span>Waiter requests bill</span>
             </div>
             <span className="text-brand-400">↓</span>
-            <div className="flex items-center gap-2 text-blue-400">
+            <div className="flex items-center gap-2 text-brand-400">
               <span>📱</span> <span>Bill generated instantly</span>
             </div>
             <span className="text-brand-400">↓</span>

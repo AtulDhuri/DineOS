@@ -59,7 +59,7 @@ export const Contact: React.FC = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
         <SEO
           title="Contact — DineOS"
           description="Get in touch with DineOS sales and support team."
@@ -71,8 +71,8 @@ export const Contact: React.FC = () => {
             <div className="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center mx-auto mb-6 text-green-400 text-3xl">
               <CheckCircle size={32} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Message Sent!</h2>
-            <p className="text-slate-400 mb-8">Thank you for reaching out. Our team will try to contact you within 5 working days.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">Message Sent!</h2>
+            <p className="text-[#64748B] mb-8">Thank you for reaching out. Our team will try to contact you within 5 working days.</p>
             <button className="btn-secondary px-8 py-3" onClick={() => setSubmitted(false)}>
               Send Another Message
             </button>
@@ -83,7 +83,7 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO
         title="Contact — DineOS Restaurant Operations Platform"
         description="Contact DineOS sales and support. Get a demo, request support, or learn more about our restaurant operations platform."
@@ -105,13 +105,13 @@ export const Contact: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-start gap-4"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-600 text-xl shrink-0">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Email</h3>
-                  <p className="text-slate-400">contact@dineos.cloud</p>
-                  <p className="text-xs text-slate-500 mt-1">Sales & general inquiries</p>
+                  <h3 className="text-lg font-bold text-[#0F172A]">Email</h3>
+                  <p className="text-[#64748B]">contact@dineos.cloud</p>
+                  <p className="text-xs text-[#64748B] mt-1">Sales & general inquiries</p>
                 </div>
               </motion.div>
 
@@ -121,13 +121,13 @@ export const Contact: React.FC = () => {
                 transition={{ delay: 0.1 }}
                 className="flex items-start gap-4"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-600 text-xl shrink-0">
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Phone</h3>
-                  <p className="text-slate-400">+91 9004576271</p>
-                  <p className="text-xs text-slate-500 mt-1">WhatsApp</p>
+                  <h3 className="text-lg font-bold text-[#0F172A]">Phone</h3>
+                  <p className="text-[#64748B]">+91 9004576271</p>
+                  <p className="text-xs text-[#64748B] mt-1">WhatsApp</p>
                 </div>
               </motion.div>
 
@@ -141,15 +141,15 @@ export const Contact: React.FC = () => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Office</h3>
-                  <p className="text-slate-400">India</p>
-                  <p className="text-xs text-slate-500 mt-1">Location: India</p>
+                  <h3 className="text-lg font-bold text-[#0F172A]">Office</h3>
+                  <p className="text-[#64748B]">India</p>
+                  <p className="text-xs text-[#64748B] mt-1">Location: India</p>
                 </div>
               </motion.div>
             </div>
 
-            <div className="glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
-              <h3 className="text-xl font-bold text-white mb-6">Send us a message</h3>
+            <div className="glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-2xl">
+              <h3 className="text-xl font-bold text-[#0F172A] mb-6">Send us a message</h3>
               {submitError && (
                 <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
                   {submitError || 'Failed to send message. Please try again or email us directly at contact@dineos.cloud'}
@@ -157,7 +157,7 @@ export const Contact: React.FC = () => {
               )}
               <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
                 <div className="relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
                     <Users size={18} />
                   </div>
                   <input
@@ -165,11 +165,11 @@ export const Contact: React.FC = () => {
                     name="name"
                     placeholder="Full Name"
                     required
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
                   />
                 </div>
                 <div className="relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
                     <Mail size={18} />
                   </div>
                   <input
@@ -177,7 +177,7 @@ export const Contact: React.FC = () => {
                     name="email"
                     placeholder="Work Email"
                     required
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
                   />
                 </div>
                 <CustomSelect
@@ -198,7 +198,7 @@ export const Contact: React.FC = () => {
                     name="message"
                     placeholder="How can we help you?"
                     rows={4}
-                    className="w-full pl-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
+                    className="w-full pl-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
                   />
                 </div>
                 <button
@@ -206,7 +206,7 @@ export const Contact: React.FC = () => {
                   disabled={isSending}
                   className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                     isSending
-                      ? 'bg-slate-600 text-slate-300 cursor-not-allowed'
+                      ? 'bg-brand-300 text-[#64748B] cursor-not-allowed'
                       : 'bg-gradient-to-r from-brand-600 via-brand-500 to-brand-700 text-white hover:shadow-[0_0_20px_rgba(255,152,0,0.35)] hover:scale-[1.02] active:scale-95'
                   }`}
                 >

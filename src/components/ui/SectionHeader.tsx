@@ -19,14 +19,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div className={`mb-12 ${textAlign}`}>
       {tagline && (
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brand-400 mb-4 block">
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50/60 border border-[#E2E8F0] text-xs font-medium text-brand-600 mb-4 block">
           <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
           {tagline}
         </span>
       )}
-      <h2 className={`text-4xl md:text-5xl font-bold text-white mb-4 ${mx}`}>{title}</h2>
+      <h2 className={`text-4xl md:text-5xl font-bold text-[#0F172A] mb-4 ${mx}`}>{title}</h2>
       {subtitle && (
-        <p className={`text-lg text-slate-400 max-w-2xl ${mx} leading-relaxed`}>{subtitle}</p>
+        <p className={`text-lg text-[#64748B] max-w-2xl ${mx} leading-relaxed`}>{subtitle}</p>
       )}
     </div>
   )

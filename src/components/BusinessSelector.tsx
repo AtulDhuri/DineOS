@@ -13,7 +13,7 @@ const businessTypes = [
 
 const flowColors: Record<string, { text: string; bg: string; border: string; icon: string }> = {
   prepaid: { text: 'text-green-400', bg: 'bg-green-500/20', border: 'border-green-500/20', icon: '💳' },
-  postpaid: { text: 'text-blue-400', bg: 'bg-blue-500/20', border: 'border-blue-500/20', icon: '💰' },
+  postpaid: { text: 'text-brand-400', bg: 'bg-brand-500/20', border: 'border-brand-500/20', icon: '💰' },
   dynamic: { text: 'text-purple-400', bg: 'bg-purple-500/20', border: 'border-purple-500/20', icon: '📊' },
 }
 

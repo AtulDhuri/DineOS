@@ -43,7 +43,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={`${name}-select`} className="block text-sm font-medium text-slate-300 mb-2">{label}</label>
+        <label htmlFor={`${name}-select`} className="block text-sm font-medium text-[#64748B] mb-2">{label}</label>
       )}
       <div className="relative" onClick={(e) => e.stopPropagation()}>
         <button
@@ -53,14 +53,14 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
           aria-expanded={isOpen}
           aria-label={label || name}
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all ${className} ${error ? 'border-red-500' : ''}`}
+          className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all ${className} ${error ? 'border-red-500' : ''}`}
         >
           <span>{selected || options[0]?.label || 'Select an option'}</span>
-          <ChevronDown size={16} className={`text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown size={16} className={`text-[#64748B] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
         </button>
 
         {isOpen && (
-          <div role="listbox" aria-label={label || name} className="absolute z-50 w-full mt-1 rounded-xl bg-slate-900/95 border border-white/10 shadow-2xl overflow-hidden max-h-60 overflow-y-auto">
+          <div role="listbox" aria-label={label || name} className="absolute z-50 w-full mt-1 rounded-xl bg-white border border-[#E2E8F0] shadow-2xl overflow-hidden max-h-60 overflow-y-auto">
             {options.map((opt) => (
               <button
                 key={opt.value}
@@ -71,7 +71,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
                 className={`w-full px-4 py-3 text-sm text-left transition-colors ${
                   selected === opt.value
                     ? 'bg-brand-500 text-white'
-                    : 'text-slate-300 hover:bg-white/10'
+                    : 'text-[#64748B] hover:bg-brand-50'
                 }`}
               >
                 {opt.label}

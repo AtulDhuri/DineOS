@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 
 const features = [
   { title: 'Zone Based Pricing', desc: 'Different prices for AC, VIP, Outdoor, Lounge zones', icon: '💰', color: 'text-purple-400' },
-  { title: 'Zone Based Menus', desc: 'Show/hide items based on dining zone', icon: '📋', color: 'text-blue-400' },
+  { title: 'Zone Based Menus', desc: 'Show/hide items based on dining zone', icon: '📋', color: 'text-brand-400' },
   { title: 'Table Mapping', desc: 'Every table auto-mapped to its zone', icon: '🗺', color: 'text-green-400' },
-  { title: 'Live Occupancy', desc: 'Real-time table status across all zones', icon: '📊', color: 'text-orange-400' },
-  { title: 'QR Based Identification', desc: 'Scan QR to detect zone and table instantly', icon: '📱', color: 'text-indigo-400' },
+  { title: 'Live Occupancy', desc: 'Real-time table status across all zones', icon: '📊', color: 'text-brand-400' },
+  { title: 'QR Based Identification', desc: 'Scan QR to detect zone and table instantly', icon: '📱', color: 'text-brand-400' },
   { title: 'Menu Availability Control', desc: 'Enable/disable items in real-time', icon: '🔘', color: 'text-red-400' },
-  { title: 'VIP Dining Rules', desc: 'Special pricing and service for VIP guests', icon: '⭐', color: 'text-amber-400' },
+  { title: 'VIP Dining Rules', desc: 'Special pricing and service for VIP guests', icon: '⭐', color: 'text-brand-400' },
   { title: 'Premium Zone Pricing', desc: 'Higher pricing for premium seating areas', icon: '💎', color: 'text-pink-400' },
 ]
 

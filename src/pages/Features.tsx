@@ -12,7 +12,7 @@ const features = [
     solution: 'Scan a QR code at the table to instantly open the digital menu and place orders.',
     benefit: 'Reduce waiting and keep service moving.',
     icon: Smartphone,
-    color: 'text-brand-400',
+    color: 'text-brand-600',
   },
   {
     title: 'Prepaid Ordering',
@@ -28,7 +28,7 @@ const features = [
     solution: 'Order now, pay at the end with bill request workflow and split bill support.',
     benefit: 'Give guests a flexible way to close the table.',
     icon: CreditCard,
-    color: 'text-blue-400',
+    color: 'text-brand-600',
   },
   {
     title: 'Zone Based Pricing',
@@ -52,7 +52,7 @@ const features = [
     solution: 'Real-time KDS with ticket tracking, prep timers, and order status updates.',
     benefit: 'Keep ticket flow visible from order to service.',
     icon: Flame,
-    color: 'text-orange-400',
+    color: 'text-brand-600',
   },
   {
     title: 'Waiter Dashboard',
@@ -68,7 +68,7 @@ const features = [
     solution: 'Interactive floor map with color-coded table status updates in real-time.',
     benefit: 'Keep table utilization visible during service.',
     icon: Layout,
-    color: 'text-indigo-400',
+    color: 'text-brand-600',
   },
   {
     title: 'Table Mapping',
@@ -106,7 +106,7 @@ const features = [
 
 export const Features: React.FC = () => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO
         title="Features — DineOS Restaurant Operations Platform"
         description="DineOS features: QR Ordering, Prepaid & Postpaid Ordering, Zone Based Pricing, Zone Based Menu Visibility, Kitchen Dashboard, Waiter Dashboard, Floor Management, Table Mapping, Menu Availability Control, Bill Requests, and Analytics."
@@ -123,7 +123,7 @@ export const Features: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-slate-900/30 section-padding">
+      <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, i) => (
@@ -133,27 +133,27 @@ export const Features: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-500/50 transition-all duration-300"
+                className="glass-card p-8 rounded-3xl border border-[#E2E8F0] hover:border-brand-500/50 transition-all duration-300"
               >
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${feature.color.replace('text-', 'bg-')}/20 border border-[${feature.color}]/30`}>
                   <feature.icon className={`text-xl ${feature.color}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3">{feature.title}</h3>
 
                 <div className="space-y-4 mb-6">
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="p-4 rounded-xl bg-brand-50/60 border border-[#E2E8F0]">
                     <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">The Problem</p>
-                    <p className="text-sm text-slate-400 leading-relaxed">{feature.problem}</p>
+                    <p className="text-sm text-[#64748B] leading-relaxed">{feature.problem}</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <p className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">The Solution</p>
-                    <p className="text-sm text-slate-300 leading-relaxed">{feature.solution}</p>
+                  <div className="p-4 rounded-xl bg-brand-50/60 border border-[#E2E8F0]">
+                    <p className="text-xs font-bold text-brand-600 uppercase tracking-wider mb-1">The Solution</p>
+                    <p className="text-sm text-[#64748B] leading-relaxed">{feature.solution}</p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Business Benefit</p>
-                  <p className="text-sm font-medium text-white">{feature.benefit}</p>
+                <div className="pt-4 border-t border-[#E2E8F0]">
+                  <p className="text-xs font-bold text-[#64748B] uppercase tracking-wider mb-1">Business Benefit</p>
+                  <p className="text-sm font-medium text-[#0F172A]">{feature.benefit}</p>
                 </div>
               </motion.div>
             ))}
@@ -163,8 +163,8 @@ export const Features: React.FC = () => {
 
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">See All Features in Action</h2>
-          <p className="text-slate-400 mb-8">Book a personalized demo to see how DineOS transforms your specific restaurant operations.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">See All Features in Action</h2>
+          <p className="text-[#64748B] mb-8">Book a personalized demo to see how DineOS transforms your specific restaurant operations.</p>
                   <Link to="/demo" className="btn-primary">See DineOS in action <ArrowRight size={18} /></Link>
         </div>
       </section>

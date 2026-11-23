@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const kitchenStats = [
   { label: 'New Orders', value: '12', color: 'text-brand-400', icon: '📥' },
-  { label: 'Preparing', value: '5', color: 'text-blue-400', icon: '🍳' },
+  { label: 'Preparing', value: '5', color: 'text-brand-400', icon: '🍳' },
   { label: 'Ready to Serve', value: '3', color: 'text-green-400', icon: '✅' },
   { label: 'Completed', value: '48', color: 'text-purple-400', icon: '🎯' },
 ]
@@ -62,7 +62,7 @@ export const KitchenDashboard: React.FC = () => {
             <div className="space-y-3">
               {kitchenTickets.map((ticket) => {
                 const statusConfig = {
-                  new: { bg: 'bg-blue-500/20', border: 'border-blue-500/30', text: 'text-blue-400', label: 'NEW' },
+                  new: { bg: 'bg-brand-500/20', border: 'border-brand-500/30', text: 'text-brand-400', label: 'NEW' },
                   preparing: { bg: 'bg-brand-500/20', border: 'border-brand-500/30', text: 'text-brand-400', label: 'PREPARING' },
                   ready: { bg: 'bg-green-500/20', border: 'border-green-500/30', text: 'text-green-400', label: 'READY' },
                   completed: { bg: 'bg-purple-500/20', border: 'border-purple-500/30', text: 'text-purple-400', label: 'DONE' },

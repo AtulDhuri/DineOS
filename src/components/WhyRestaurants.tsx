@@ -34,7 +34,7 @@ export const WhyRestaurants: React.FC = () => {
               whileHover={{ y: -8, scale: 1.02 }}
               className="glass-card p-8 rounded-2xl border border-white/10 hover:border-brand-500/50 transition-all duration-300 group"
             >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${b.icon === '⚡' ? 'bg-blue-500/20 border border-blue-500/30' : b.icon === '🔄' ? 'bg-green-500/20 border border-green-500/30' : b.icon === '✨' ? 'bg-purple-500/20 border border-purple-500/30' : b.icon === '👁' ? 'bg-indigo-500/20 border border-indigo-500/30' : b.icon === '📈' ? 'bg-orange-500/20 border border-orange-500/30' : b.icon === '📋' ? 'bg-red-500/20 border border-red-500/30' : b.icon === '⭐' ? 'bg-amber-500/20 border border-amber-500/30' : b.icon === '💼' ? 'bg-brand-500/20 border border-brand-500/30' : 'bg-pink-500/20 border border-pink-500/30'}`}>
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${b.icon === '⚡' ? 'bg-brand-500/20 border border-brand-500/30' : b.icon === '🔄' ? 'bg-green-500/20 border border-green-500/30' : b.icon === '✨' ? 'bg-purple-500/20 border border-purple-500/30' : b.icon === '👁' ? 'bg-brand-500/20 border border-brand-500/30' : b.icon === '📈' ? 'bg-brand-500/20 border border-brand-500/30' : b.icon === '📋' ? 'bg-red-500/20 border border-red-500/30' : b.icon === '⭐' ? 'bg-brand-500/20 border border-brand-500/30' : b.icon === '💼' ? 'bg-brand-500/20 border border-brand-500/30' : 'bg-pink-500/20 border border-pink-500/30'}`}>
                 <span className="text-3xl">{b.icon}</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-3">{b.title}</h3>

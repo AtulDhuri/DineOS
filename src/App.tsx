@@ -12,6 +12,7 @@ import { Demo } from './pages/Demo'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { Blog } from './pages/Blog'
+import { NotFound } from './pages/NotFound'
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation()
@@ -25,7 +26,7 @@ const ScrollToTop: React.FC = () => {
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-16">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] pt-16">
       <Navbar />
       <ScrollToTop />
       {children}
@@ -49,6 +50,7 @@ export const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -1,44 +1,13 @@
 import React from 'react'
+import { ArrowUpRight, Mail, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-export const Footer: React.FC = () => {
-  return (
-    <footer className="border-t border-white/10 bg-slate-900/50 backdrop-blur">
-      <div className="container-custom section-padding">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-pink-500 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">R</span>
-            </div>
-            <span className="text-lg font-bold text-white">RestoFlow</span>
-          </div>
-          
-          <div className="flex gap-6 text-sm text-slate-400">
-            <a href="#" className="hover:text-white transition-colors">Platform</a>
-            <a href="#" className="hover:text-white transition-colors">Pricing</a>
-            <a href="#" className="hover:text-white transition-colors">Resources</a>
-            <a href="#" className="hover:text-white transition-colors">Contact</a>
-          </div>
+const groups = [
+  { title: 'Platform', links: [['Product overview', '/product'], ['Features', '/features'], ['Pricing', '/pricing']] },
+  { title: 'Solutions', links: [['Restaurants', '/solutions'], ['Hotels & resorts', '/solutions'], ['Multi-outlet groups', '/solutions']] },
+  { title: 'Company', links: [['About DineOS', '/about'], ['Resources', '/blog'], ['Contact', '/contact']] },
+]
 
-          <div className="flex gap-4">
-            <a href="#" className="text-slate-400 hover:text-brand-400 transition-colors">
-              <span className="text-lg">📧</span>
-            </a>
-            <a href="#" className="text-slate-400 hover:text-brand-400 transition-colors">
-              <span className="text-lg">📱</span>
-            </a>
-            <a href="#" className="text-slate-400 hover:text-brand-400 transition-colors">
-              <span className="text-lg">🔗</span>
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-8 pt-8 border-t border-white/10 text-center text-xs text-slate-500">
-          <p>RestoFlow Platform. Built for modern restaurant operations.</p>
-          <p className="mt-1">© 2026 RestoFlow Inc. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  )
-}
+export const Footer: React.FC = () => <footer className="border-t border-slate-200 bg-white"><div className="container-custom px-4 py-14 sm:px-6 lg:px-8"><div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]"><div><Link to="/" className="flex items-center gap-2.5"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-sm font-black text-white">D</span><span className="text-xl font-black tracking-tight text-slate-950">Dine<span className="text-brand-600">OS</span></span></Link><p className="mt-5 max-w-xs text-sm leading-relaxed text-slate-600">The connected operating platform for modern restaurants, cafes, hotels, lounges, and multi-outlet groups.</p><div className="mt-6 space-y-2 text-sm text-slate-600"><a className="flex items-center gap-2 hover:text-brand-700" href="mailto:contact@dineos.cloud"><Mail size={15} />contact@dineos.cloud</a><a className="flex items-center gap-2 hover:text-brand-700" href="tel:+919004576271"><Phone size={15} />+91 9004576271</a></div></div><div className="grid grid-cols-2 gap-8 sm:grid-cols-3">{groups.map((group) => <div key={group.title}><h3 className="text-sm font-bold text-slate-950">{group.title}</h3><ul className="mt-4 space-y-3">{group.links.map(([label, href]) => <li key={href}><Link to={href} className="text-sm text-slate-600 transition hover:text-brand-700">{label}</Link></li>)}</ul></div>)}</div></div><div className="mt-14 flex flex-col gap-4 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© 2026 DineOS. Built for modern restaurant operations.</p><div className="flex items-center gap-5"><span>Privacy</span><span>Terms</span><Link to="/demo" className="flex items-center gap-1 font-semibold text-brand-700">Book a walkthrough <ArrowUpRight size={13} /></Link></div></div></div></footer>
 
 export default Footer

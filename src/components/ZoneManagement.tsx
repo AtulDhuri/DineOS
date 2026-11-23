@@ -31,7 +31,7 @@ export const ZoneManagement: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
               className="group flex flex-col items-center gap-3 px-4 py-6 rounded-2xl transition-all duration-300 cursor-pointer bg-white/5 border border-white/10 hover:border-white/20"
             >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-2 ${z.color === 'blue' ? 'bg-blue-500/20 border border-blue-500/30' : z.color === 'green' ? 'bg-green-500/20 border border-green-500/30' : z.color === 'purple' ? 'bg-purple-500/20 border border-purple-500/30' : z.color === 'pink' ? 'bg-pink-500/20 border border-pink-500/30' : z.color === 'orange' ? 'bg-orange-500/20 border border-orange-500/30' : z.color === 'red' ? 'bg-red-500/20 border border-red-500/30' : 'bg-yellow-500/20 border border-yellow-500/30'}`}>
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-2 ${z.color === 'blue' ? 'bg-brand-500/20 border border-brand-500/30' : z.color === 'green' ? 'bg-green-500/20 border border-green-500/30' : z.color === 'purple' ? 'bg-purple-500/20 border border-purple-500/30' : z.color === 'pink' ? 'bg-pink-500/20 border border-pink-500/30' : z.color === 'orange' ? 'bg-brand-500/20 border border-brand-500/30' : z.color === 'red' ? 'bg-red-500/20 border border-red-500/30' : 'bg-brand-500/20 border border-brand-500/30'}`}>
                 <span className="text-2xl">{z.emoji}</span>
               </div>
               <h4 className="font-bold text-white text-sm">{z.name}</h4>

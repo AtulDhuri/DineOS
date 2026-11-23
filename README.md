@@ -29,7 +29,7 @@ npm install
 ### Run Development Server
 
 ```bash
-npm run dev
+USe 
 ```
 
 The site will be available at `http://localhost:3000`

@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 
 const screens = [
   { name: 'Home', color: 'from-brand-500 to-purple-600', icon: '🏠' },
-  { name: 'Categories', color: 'from-blue-500 to-cyan-500', icon: '📂' },
+  { name: 'Categories', color: 'from-brand-500 to-brand-500', icon: '📂' },
   { name: 'Product Listing', color: 'from-green-500 to-emerald-500', icon: '📋' },
   { name: 'Product Details', color: 'from-purple-500 to-pink-500', icon: '📱' },
-  { name: 'Cart', color: 'from-orange-500 to-red-500', icon: '🛒' },
-  { name: 'Checkout', color: 'from-indigo-500 to-brand-500', icon: '💳' },
-  { name: 'Order Tracking', color: 'from-teal-500 to-cyan-500', icon: '📦' },
+  { name: 'Cart', color: 'from-brand-500 to-red-500', icon: '🛒' },
+  { name: 'Checkout', color: 'from-brand-500 to-brand-500', icon: '💳' },
+  { name: 'Order Tracking', color: 'from-teal-500 to-brand-500', icon: '📦' },
   { name: 'Bill Request', color: 'from-rose-500 to-pink-500', icon: '🧾' },
   { name: 'Feedback', color: 'from-violet-500 to-fuchsia-500', icon: '⭐' },
 ]

@@ -4,15 +4,15 @@ import { motion } from 'framer-motion'
 const tableStatuses = [
   { id: 'T1', zone: 'AC Zone', status: 'available', label: 'Available', color: 'bg-green-500' },
   { id: 'T2', zone: 'AC Zone', status: 'available', label: 'Available', color: 'bg-green-500' },
-  { id: 'T3', zone: 'AC Zone', status: 'occupied', label: 'Occupied', color: 'bg-yellow-500' },
-  { id: 'T4', zone: 'Outdoor', status: 'ordering', label: 'Ordering', color: 'bg-blue-500' },
+  { id: 'T3', zone: 'AC Zone', status: 'occupied', label: 'Occupied', color: 'bg-brand-500' },
+  { id: 'T4', zone: 'Outdoor', status: 'ordering', label: 'Ordering', color: 'bg-brand-500' },
   { id: 'T5', zone: 'Outdoor', status: 'available', label: 'Available', color: 'bg-green-500' },
-  { id: 'T6', zone: 'Outdoor', status: 'waiting-bill', label: 'Waiting For Bill', color: 'bg-orange-500' },
+  { id: 'T6', zone: 'Outdoor', status: 'waiting-bill', label: 'Waiting For Bill', color: 'bg-brand-500' },
   { id: 'T7', zone: 'VIP Zone', status: 'reserved', label: 'Reserved', color: 'bg-red-500' },
-  { id: 'T8', zone: 'VIP Zone', status: 'occupied', label: 'Occupied', color: 'bg-yellow-500' },
+  { id: 'T8', zone: 'VIP Zone', status: 'occupied', label: 'Occupied', color: 'bg-brand-500' },
   { id: 'T9', zone: 'VIP Zone', status: 'available', label: 'Available', color: 'bg-green-500' },
-  { id: 'T10', zone: 'VIP Zone', status: 'ordering', label: 'Ordering', color: 'bg-blue-500' },
-  { id: 'T11', zone: 'Lounge', status: 'occupied', label: 'Occupied', color: 'bg-yellow-500' },
+  { id: 'T10', zone: 'VIP Zone', status: 'ordering', label: 'Ordering', color: 'bg-brand-500' },
+  { id: 'T11', zone: 'Lounge', status: 'occupied', label: 'Occupied', color: 'bg-brand-500' },
   { id: 'T12', zone: 'Lounge', status: 'available', label: 'Available', color: 'bg-green-500' },
 ]
 
@@ -21,9 +21,9 @@ export const FloorPlan: React.FC = () => {
 
   const statusColors: Record<string, string> = {
     available: 'bg-green-500',
-    occupied: 'bg-yellow-500',
-    ordering: 'bg-blue-500',
-    'waiting-bill': 'bg-orange-500',
+    occupied: 'bg-brand-500',
+    ordering: 'bg-brand-500',
+    'waiting-bill': 'bg-brand-500',
     reserved: 'bg-red-500',
   }
 
@@ -41,9 +41,9 @@ export const FloorPlan: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { label: 'Available', color: 'bg-green-500' },
-            { label: 'Occupied', color: 'bg-yellow-500' },
-            { label: 'Ordering', color: 'bg-blue-500' },
-            { label: 'Waiting For Bill', color: 'bg-orange-500' },
+            { label: 'Occupied', color: 'bg-brand-500' },
+            { label: 'Ordering', color: 'bg-brand-500' },
+            { label: 'Waiting For Bill', color: 'bg-brand-500' },
             { label: 'Reserved', color: 'bg-red-500' },
           ].map((s) => (
             <span key={s.label} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300">

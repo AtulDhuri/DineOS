@@ -136,7 +136,7 @@ export const Pricing: React.FC = () => {
   const regularYearlyMultiAdd = parseInt(multi.additionalMonthly.replace(/[^0-9]/g, '')) * 12
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO
         title="Pricing — DineOS Restaurant Operations Platform"
         description="Simple, transparent pricing for DineOS. Standard Outlet and Multi-Outlet plans with USD and INR currency support and monthly/annual billing."
@@ -168,38 +168,38 @@ export const Pricing: React.FC = () => {
               </div>
 
               <div className="relative group inline-block">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Billing</span>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-bold text-[#64748B] uppercase tracking-wider">Billing</span>
+                  <div role="group" aria-label="Billing period" className="inline-flex items-center gap-1 rounded-2xl border border-[#E2E8F0] bg-white p-1 shadow-sm">
                     <button
                       onClick={() => setBilling('monthly')}
-                      className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                      className={`whitespace-nowrap px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                         billing === 'monthly'
-                          ? 'bg-white/20 text-white shadow-sm'
-                          : 'text-slate-400 hover:text-white'
+                          ? 'bg-brand-500 text-white shadow-sm'
+                          : 'text-[#64748B] hover:text-[#0F172A]'
                       }`}
                     >
                       Monthly
                     </button>
                     <button
                       onClick={() => setBilling('annual')}
-                      className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                      className={`whitespace-nowrap px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                         billing === 'annual'
-                          ? 'bg-brand-600 text-white shadow-[0_0_15px_rgba(99,102,241,0.3)]'
-                          : 'text-slate-400 hover:text-white'
+                          ? 'bg-brand-500 text-white shadow-sm'
+                          : 'text-[#64748B] hover:text-[#0F172A]'
                       }`}
                     >
                       Annual
-                      <span className={`ml-2 px-2 py-0.5 rounded text-[10px] font-bold shadow-sm border ${
+                      <span className={`ml-2 inline-block whitespace-nowrap px-2 py-0.5 rounded-md text-[10px] font-bold border ${
                         billing === 'annual'
-                          ? 'bg-white text-brand-600 border-white/30'
-                          : 'bg-white/5 text-white/40 border-white/10'
+                          ? 'bg-white text-brand-600 border-white'
+                          : 'bg-brand-50 text-brand-600 border-brand-100'
                       }`}>
                         Save 20%
                       </span>
                     </button>
                   </div>
-                </label>
+                </div>
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@ export const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               whileHover={{ y: -8 }}
-              className="relative glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl flex flex-col"
+              className="relative glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-2xl flex flex-col"
             >
               <div className="absolute top-6 right-6">
                 <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
@@ -225,29 +225,29 @@ export const Pricing: React.FC = () => {
                 </span>
               </div>
               <div className="relative z-10">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold uppercase tracking-wider mb-4 block">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 text-xs font-bold uppercase tracking-wider mb-4 block">
                   Standard Outlet
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-3">Standard Outlet</h3>
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                <h3 className="text-2xl font-bold text-[#0F172A] mb-3">Standard Outlet</h3>
+                <p className="text-[#64748B] text-sm mb-6 leading-relaxed">
                   Perfect for restaurants, cafes, cloud kitchens, and single-location businesses.
                 </p>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className={`text-3xl font-extrabold text-white tracking-tight`}>{prices.setup}</span>
-                    <span className="text-base text-slate-400 font-medium">{prices.setupLabel}</span>
+                    <span className={`text-3xl font-extrabold text-[#0F172A] tracking-tight`}>{prices.setup}</span>
+                    <span className="text-base text-[#64748B] font-medium">{prices.setupLabel}</span>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className={`flex items-baseline gap-1 mb-2 ${isAnnual ? '' : 'hidden'}`}>
-                    <span className={`text-5xl font-extrabold text-brand-400 tracking-tight`}>{prices.annual}</span>
-                    <span className="text-lg text-slate-400 font-medium">{prices.annualLabel}</span>
+                    <span className={`text-5xl font-extrabold text-brand-600 tracking-tight`}>{prices.annual}</span>
+                    <span className="text-lg text-[#64748B] font-medium">{prices.annualLabel}</span>
                   </div>
                   <div className={`flex items-baseline gap-1 mb-2 ${isAnnual ? 'hidden' : ''}`}>
-                    <span className={`text-5xl font-extrabold text-brand-400 tracking-tight`}>{prices.monthly}</span>
-                    <span className="text-lg text-slate-400 font-medium">{prices.monthlyLabel}</span>
+                    <span className={`text-5xl font-extrabold text-brand-600 tracking-tight`}>{prices.monthly}</span>
+                    <span className="text-lg text-[#64748B] font-medium">{prices.monthlyLabel}</span>
                   </div>
 
                   {isAnnual && (
@@ -255,7 +255,7 @@ export const Pricing: React.FC = () => {
                       <span className="text-xs font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded border border-green-500/20">
                         {prices.save}
                       </span>
-                      <span className="text-xs text-slate-500 line-through">
+                      <span className="text-xs text-[#64748B] line-through">
                         {symbol}{regularYearlyStandard}/year
                       </span>
                     </div>
@@ -263,7 +263,7 @@ export const Pricing: React.FC = () => {
 
                   {!isAnnual && (
                     <div className="mt-2 flex items-center gap-2">
-                      <span className="text-xs text-slate-400 font-medium">Monthly billing · cancel anytime</span>
+                      <span className="text-xs text-[#64748B] font-medium">Monthly billing · cancel anytime</span>
                     </div>
                   )}
                 </div>
@@ -275,10 +275,10 @@ export const Pricing: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
-                      className="flex items-start gap-3 text-sm text-slate-300"
+                      className="flex items-start gap-3 text-sm text-[#64748B]"
                     >
                       <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-500/20 border border-brand-500/30">
-                        <CheckCircle size={14} className="text-brand-400" />
+                        <CheckCircle size={14} className="text-brand-600" />
                       </div>
                       <span>{feature}</span>
                     </motion.li>
@@ -294,38 +294,38 @@ export const Pricing: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
               whileHover={{ y: -8 }}
-              className="relative glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl flex flex-col"
+              className="relative glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-2xl flex flex-col"
             >
               <div className="absolute top-6 right-6">
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-                  <Layout size={12} className="text-white" />
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-50 border border-[#E2E8F0] text-[#0F172A] text-xs font-bold uppercase tracking-wider shadow-lg">
+                  <Layout size={12} className="text-[#0F172A]" />
                   Restaurant Chains
                 </span>
               </div>
               <div className="relative z-10">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 block">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-[#E2E8F0] text-[#0F172A] text-xs font-bold uppercase tracking-wider mb-4 block">
                   Multi-Outlet
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-3">Multi-Outlet</h3>
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                <h3 className="text-2xl font-bold text-[#0F172A] mb-3">Multi-Outlet</h3>
+                <p className="text-[#64748B] text-sm mb-6 leading-relaxed">
                   Built for restaurant groups, franchises, and businesses operating multiple locations.
                 </p>
 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className={`text-3xl font-extrabold text-white tracking-tight`}>{multi.setup}</span>
-                    <span className="text-base text-slate-400 font-medium">One-Time Setup Fee</span>
+                    <span className={`text-3xl font-extrabold text-[#0F172A] tracking-tight`}>{multi.setup}</span>
+                    <span className="text-base text-[#64748B] font-medium">One-Time Setup Fee</span>
                   </div>
                 </div>
 
                 <div className="mb-8">
                   <div className={`flex items-baseline gap-1 mb-2 ${isAnnual ? '' : 'hidden'}`}>
-                    <span className={`text-4xl font-extrabold text-brand-400 tracking-tight`}>{multi.baseAnnual}</span>
-                    <span className="text-base text-slate-400 font-medium">/year (base)</span>
+                    <span className={`text-4xl font-extrabold text-brand-600 tracking-tight`}>{multi.baseAnnual}</span>
+                    <span className="text-base text-[#64748B] font-medium">/year (base)</span>
                   </div>
                   <div className={`flex items-baseline gap-1 mb-2 ${isAnnual ? 'hidden' : ''}`}>
-                    <span className={`text-4xl font-extrabold text-brand-400 tracking-tight`}>{multi.baseMonthly}</span>
-                    <span className="text-base text-slate-400 font-medium">/month (base)</span>
+                    <span className={`text-4xl font-extrabold text-brand-600 tracking-tight`}>{multi.baseMonthly}</span>
+                    <span className="text-base text-[#64748B] font-medium">/month (base)</span>
                   </div>
 
                   {isAnnual && (
@@ -333,17 +333,17 @@ export const Pricing: React.FC = () => {
                       <span className="text-xs font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded border border-green-500/20">
                         {multi.baseSave}
                       </span>
-                      <span className="text-xs text-slate-500 line-through">
+                      <span className="text-xs text-[#64748B] line-through">
                         {symbol}{regularYearlyMultiBase}/year
                       </span>
                     </div>
                   )}
                 </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-xl p-6 mb-6">
+                <div className="bg-brand-50/60 border border-[#E2E8F0] rounded-xl p-6 mb-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-slate-400 font-medium">Number of Additional Outlets</span>
-                    <span className={`text-sm font-bold text-white ${symbol}`}>{isAnnual ? multi.additionalAnnual : multi.additionalMonthly}</span>
+                    <span className="text-sm text-[#64748B] font-medium">Number of Additional Outlets</span>
+                    <span className={`text-sm font-bold text-[#0F172A] ${symbol}`}>{isAnnual ? multi.additionalAnnual : multi.additionalMonthly}</span>
                   </div>
                   <input
                     type="range"
@@ -351,13 +351,13 @@ export const Pricing: React.FC = () => {
                     max="20"
                     value={additionalOutlets}
                     onChange={(e) => setAdditionalOutlets(parseInt(e.target.value))}
-                    className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-brand-500"
+                    className="w-full h-2 bg-brand-50 rounded-lg appearance-none cursor-pointer accent-brand-500"
                   />
                   <div className="mt-2 flex items-baseline gap-1">
-                    <span className={`text-2xl font-bold text-white`}>{symbol}{isAnnual ? totalAnnual : totalMonthly}</span>
-                    <span className="text-sm text-slate-400 font-medium">{isAnnual ? '/year total' : '/month total'}</span>
+                    <span className={`text-2xl font-bold text-[#0F172A]`}>{symbol}{isAnnual ? totalAnnual : totalMonthly}</span>
+                    <span className="text-sm text-[#64748B] font-medium">{isAnnual ? '/year total' : '/month total'}</span>
                   </div>
-                  <p className="text-xs text-slate-500 mt-2 text-center">
+                  <p className="text-xs text-[#64748B] mt-2 text-center">
                     {isAnnual
                       ? `${multi.baseAnnual} + (${multi.additionalAnnual} × ${additionalOutlets} additional outlets)`
                       : `${multi.baseMonthly} + (${multi.additionalMonthly} × ${additionalOutlets} additional outlets)`}
@@ -371,10 +371,10 @@ export const Pricing: React.FC = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
-                      className="flex items-start gap-3 text-sm text-slate-300"
+                      className="flex items-start gap-3 text-sm text-[#64748B]"
                     >
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-blue-500/20 border border-blue-500/30">
-                        <CheckCircle size={14} className="text-blue-400" />
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-brand-500/20 border border-brand-500/30">
+                        <CheckCircle size={14} className="text-brand-600" />
                       </div>
                       <span>{feature}</span>
                     </motion.li>
@@ -389,18 +389,18 @@ export const Pricing: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="bg-slate-900/30 section-padding">
+      <section className="bg-white section-padding">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-xl"
+            className="glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-xl"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl">
+              <div className="w-10 h-10 rounded-xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-600 text-xl">
                 <Clock size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Setup & Onboarding Includes</h3>
+              <h3 className="text-2xl font-bold text-[#0F172A]">Setup & Onboarding Includes</h3>
             </div>
             <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-4">
               {onboarding.map((item, i) => (
@@ -409,12 +409,12 @@ export const Pricing: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-brand-50/60 border border-[#E2E8F0]"
                 >
                   <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 bg-green-500/20 border border-green-500/30">
                     <CheckCircle size={16} className="text-green-400" />
                   </div>
-                  <span className="text-sm text-slate-300 font-medium">{item}</span>
+                  <span className="text-sm text-[#64748B] font-medium">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -428,13 +428,13 @@ export const Pricing: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-xl"
+            className="glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-xl"
           >
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl">
                 <ShieldCheck size={24} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Trusted & Transparent</h3>
+              <h3 className="text-2xl font-bold text-[#0F172A]">Trusted & Transparent</h3>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {trust.map((item, i) => (
@@ -443,12 +443,12 @@ export const Pricing: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-start gap-3 p-6 rounded-xl bg-white/5 border border-white/10"
+                  className="flex items-start gap-3 p-6 rounded-xl bg-brand-50/60 border border-[#E2E8F0]"
                 >
                   <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 bg-emerald-500/10 border border-emerald-500/20">
                     <CheckCircle size={20} className="text-emerald-400" />
                   </div>
-                  <span className="text-sm font-medium text-slate-300 leading-relaxed">{item}</span>
+                  <span className="text-sm font-medium text-[#64748B] leading-relaxed">{item}</span>
                 </motion.div>
               ))}
             </div>

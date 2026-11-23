@@ -2,6 +2,20 @@ import React from 'react'
 import { ArrowRight, CalendarCheck, Play } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-export const FinalCTA: React.FC = () => <section id="demo" className="section-padding relative overflow-hidden"><div className="absolute inset-0 bg-gradient-to-br from-brand-600/20 via-slate-950 to-slate-950 pointer-events-none" /><div className="absolute -top-40 right-0 w-[500px] h-[500px] rounded-full bg-brand-500/10 blur-[120px]" /><div className="container-custom relative z-10"><div className="rounded-[2rem] border border-brand-300/20 bg-white/[.04] p-8 md:p-14 lg:p-20 text-center"><div className="mx-auto w-14 h-14 rounded-2xl bg-brand-400/15 border border-brand-300/20 flex items-center justify-center mb-7"><CalendarCheck size={25} className="text-brand-200" /></div><p className="eyebrow">Ready when you are</p><h2 className="display-heading max-w-3xl mx-auto">Give your restaurant a <span className="gradient-text">better operating system.</span></h2><p className="section-lede max-w-2xl mx-auto mt-5">See how DineOS can help your team serve faster, reduce mistakes, and run every outlet with more confidence.</p><div className="flex flex-col sm:flex-row justify-center gap-3 mt-8"><Link to="/demo" className="btn-primary">Book a demo <ArrowRight size={18} /></Link><Link to="/pricing" className="btn-secondary"><Play size={16} /> Explore plans</Link></div><p className="text-xs text-slate-500 mt-5">A practical 15-minute walkthrough. No pressure, no credit card.</p></div></div></section>
+export const FinalCTA: React.FC = () => (
+  <section id="demo" className="relative overflow-hidden bg-[#E6F6F9] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-300/30 blur-3xl" />
+    <div className="container-custom relative z-10">
+      <div className="text-center">
+        <div className="mx-auto mb-7 flex h-14 w-14 items-center justify-center text-brand-700"><CalendarCheck size={32} /></div>
+        <p className="eyebrow !text-brand-700">Ready when you are</p>
+        <h2 className="display-heading mx-auto max-w-3xl !text-slate-950">Give your restaurant a <span className="text-brand-700">better operating system.</span></h2>
+        <p className="section-lede mx-auto mt-5 max-w-2xl !text-slate-700">See how DineOS can help your team serve faster, reduce mistakes, and run every outlet with more confidence.</p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><Link to="/demo" className="btn-primary">Book a demo <ArrowRight size={18} /></Link><Link to="/pricing" className="btn-secondary "><Play size={16} /> Explore plans</Link></div>
+        <p className="mt-5 text-xs font-medium !text-slate-700">A practical 15-minute walkthrough. No pressure, no credit card.</p>
+      </div>
+    </div>
+  </section>
+)
 
 export default FinalCTA

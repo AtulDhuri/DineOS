@@ -76,11 +76,11 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="glass-card rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl max-w-3xl mx-auto"
+      className="glass-card rounded-3xl p-8 md:p-12 border border-[#E2E8F0] shadow-2xl max-w-3xl mx-auto"
     >
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-slate-400">{subtitle}</p>
+        <h3 className="text-2xl font-bold text-[#0F172A] mb-2">{title}</h3>
+        <p className="text-[#64748B]">{subtitle}</p>
       </div>
 
       {status === 'success' && (
@@ -102,7 +102,7 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
       >
         <div className="grid md:grid-cols-2 gap-4">
           <div className="relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
               <Users size={18} />
             </div>
             <input
@@ -110,11 +110,11 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
               name="name"
               placeholder="Full Name"
               required
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
             />
           </div>
           <div className="relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
               <Mail size={18} />
             </div>
             <input
@@ -122,32 +122,32 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
               name="email"
               placeholder="Work Email"
               required
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
             />
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4">
           <div className="relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
               <MapPin size={18} />
             </div>
             <input
               type="text"
               name="restaurant"
               placeholder="Restaurant / Business Name"
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
             />
           </div>
           <div className="relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#64748B]">
               <Phone size={18} />
             </div>
             <input
               type="tel"
               name="phone"
               placeholder="Phone Number"
-              className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all"
             />
           </div>
         </div>
@@ -172,7 +172,7 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
         />
 
         <div className="relative">
-          <div className="absolute left-3 top-3 text-slate-500">
+          <div className="absolute left-3 top-3 text-[#64748B]">
             <MessageSquare size={18} />
           </div>
           <textarea
@@ -180,7 +180,7 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
             aria-label="Additional details"
             placeholder="Tell us about your operation, preferred demo timing, outlets, or questions (optional)"
             rows={3}
-            className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all resize-y"
+            className="w-full pl-10 pr-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-all resize-y"
           />
         </div>
 
@@ -188,7 +188,7 @@ Additional Details: ${formData.get('details') || 'Not provided'}`,
           {buttonText} <ArrowRight size={20} />
         </Button>
 
-        <p className="text-xs text-center text-slate-500 mt-2">
+        <p className="text-xs text-center text-[#64748B] mt-2">
           No credit card required. Our team will try to reach you within 5 working days to arrange a 15-minute walkthrough.
         </p>
       </form>

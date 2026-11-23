@@ -1,8 +1,41 @@
 import React from 'react'
+import { ArrowUpRight, Mail, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Mail, Phone } from 'lucide-react'
-import logo from '../../DineOS_footer.png'
+import logo from '../../assets/DineOS_logo_final/DineOS.png'
 
-export const Footer: React.FC = () => <footer className="border-t border-white/10 bg-slate-900/50 backdrop-blur"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"><div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12"><div className="col-span-2 lg:col-span-1"><div className="flex items-center mb-4"><img src={logo} alt="DineOS logo" className="h-8 w-auto object-contain" /></div><p className="text-sm text-slate-400 leading-relaxed max-w-xs">The Restaurant Operating System for connected ordering, kitchen, billing, inventory, and outlet operations.</p><Link to="/demo" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-brand-200 hover:text-brand-100">See DineOS in action <ArrowRight size={15} /></Link></div><div><h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Product</h4><ul className="space-y-3">{[['Platform', '/product'], ['Features', '/features'], ['Pricing', '/pricing']].map(([label, href]) => <li key={label}><Link to={href} className="text-sm text-slate-400 hover:text-brand-400 transition-colors">{label}</Link></li>)}</ul></div><div><h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Solutions</h4><ul className="space-y-3">{[['Restaurant models', '/solutions'], ['Demo', '/demo'], ['About DineOS', '/about']].map(([label, href]) => <li key={label}><Link to={href} className="text-sm text-slate-400 hover:text-brand-400 transition-colors">{label}</Link></li>)}</ul></div><div><h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Get started</h4><ul className="space-y-3"><li><Link to="/contact" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">Contact</Link></li><li><a href="mailto:contact@dineos.cloud" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">Email the team</a></li><li><Link to="/pricing" className="text-sm text-slate-400 hover:text-brand-400 transition-colors">View pricing</Link></li></ul></div><div className="col-span-2 md:col-span-4 lg:col-span-1"><h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">Contact</h4><a href="mailto:contact@dineos.cloud" className="flex items-center gap-2 mb-3 text-sm text-slate-300 hover:text-brand-300"><Mail size={16} className="text-slate-500" />contact@dineos.cloud</a><a href="tel:+919004576271" className="flex items-center gap-2 text-sm text-slate-300 hover:text-brand-300"><Phone size={16} className="text-slate-500" />+91 9004576271</a></div></div><div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-slate-500"><p>© {new Date().getFullYear()} DineOS. All rights reserved.</p><div className="flex gap-5"><span>Privacy Policy</span><span>Terms</span><span>Accessibility</span></div></div></div></footer>
+const groups = [
+  { title: 'Product', links: [['Platform', '/product'], ['Features', '/features'], ['Pricing', '/pricing']] },
+  { title: 'Solutions', links: [['Restaurants & Hotels', '/solutions'], ['Live demo', '/demo'], ['About DineOS', '/about']] },
+  { title: 'Company', links: [['Contact', '/contact'], ['Resources', '/blog'], ['Book a Demo', '/demo']] },
+]
+
+export const Footer: React.FC = () => (
+  <footer className="bg-gradient-to-br from-brand-800 to-brand-700 text-white">
+    <div className="container-custom px-4 py-16 sm:px-6 lg:px-8">
+      <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
+        <div>
+          <span className="-ml-2 inline-block rounded-2xl bg-white px-3 py-1"><img src={logo} alt="DineOS" className="h-12 w-auto object-contain" loading="lazy" /></span>
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-100">QR ordering, kitchen updates, billing and analytics for modern restaurants, cafes, hotels and multi-outlet groups.</p>
+          <div className="mt-6 space-y-3 text-sm text-white">
+            <a className="flex items-center gap-2 hover:text-brand-200" href="mailto:contact@dineos.cloud"><Mail size={15} className="text-brand-200" />contact@dineos.cloud</a>
+            <a className="flex items-center gap-2 hover:text-brand-200" href="tel:+919004576271"><Phone size={15} className="text-brand-200" />+91 9004576271</a>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+          {groups.map((g) => (
+            <div key={g.title}>
+              <h3 className="text-sm font-bold text-white">{g.title}</h3>
+              <ul className="mt-4 space-y-3">{g.links.map(([label, href]) => <li key={label}><Link to={href} className="text-sm text-brand-100 transition hover:text-brand-200">{label}</Link></li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-14 flex flex-col gap-4 border-t border-white/20 pt-6 text-xs text-brand-100 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} DineOS. All rights reserved.</p>
+        <div className="flex items-center gap-5"><span>Privacy Policy</span><span>Terms</span><Link to="/demo" className="flex items-center gap-1 font-semibold text-brand-200">Book a walkthrough <ArrowUpRight size={13} /></Link></div>
+      </div>
+    </div>
+  </footer>
+)
 
 export default Footer

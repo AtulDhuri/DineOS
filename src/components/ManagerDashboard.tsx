@@ -3,16 +3,16 @@ import { motion } from 'framer-motion'
 
 const managerKPIs = [
   { label: "Today's Sales", value: '₹45,230', change: '+12%', changeColor: 'text-green-400', color: 'text-brand-400' },
-  { label: 'Orders', value: '128', change: '+8%', changeColor: 'text-green-400', color: 'text-blue-400' },
+  { label: 'Orders', value: '128', change: '+8%', changeColor: 'text-green-400', color: 'text-brand-400' },
   { label: 'Avg Order Value', value: '₹353', change: '+5%', changeColor: 'text-green-400', color: 'text-purple-400' },
   { label: 'Active Tables', value: '24', change: '+2', changeColor: 'text-green-400', color: 'text-emerald-400' },
-  { label: 'Occupancy', value: '78%', change: '+3%', changeColor: 'text-green-400', color: 'text-orange-400' },
+  { label: 'Occupancy', value: '78%', change: '+3%', changeColor: 'text-green-400', color: 'text-brand-400' },
   { label: 'Popular Items', value: '42', change: '—', changeColor: 'text-slate-400', color: 'text-pink-400' },
 ]
 
 const zoneRevenue = [
   { zone: 'VIP Zone', revenue: '₹12,450', pct: 35, color: 'text-purple-400' },
-  { zone: 'AC Zone', revenue: '₹15,300', pct: 42, color: 'text-blue-400' },
+  { zone: 'AC Zone', revenue: '₹15,300', pct: 42, color: 'text-brand-400' },
   { zone: 'Outdoor', revenue: '₹8,200', pct: 15, color: 'text-green-400' },
   { zone: 'Lounge', revenue: '₹9,280', pct: 8, color: 'text-pink-400' },
 ]

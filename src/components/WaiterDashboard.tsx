@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 const waiterStats = [
   { label: 'Active Tables', value: '12', color: 'text-brand-400' },
   { label: 'Ready Orders', value: '5', color: 'text-green-400' },
-  { label: 'Call Requests', value: '2', color: 'text-blue-400' },
-  { label: 'Bill Pending', value: '3', color: 'text-orange-400' },
+  { label: 'Call Requests', value: '2', color: 'text-brand-400' },
+  { label: 'Bill Pending', value: '3', color: 'text-brand-400' },
 ]
 
 const tables = [
@@ -72,9 +72,9 @@ export const WaiterDashboard: React.FC = () => {
               {tables.map((t) => {
                 const statusConfig = {
                   available: { color: 'bg-green-500', dot: 'bg-green-400' },
-                  occupied: { color: 'bg-yellow-500', dot: 'bg-yellow-400' },
-                  ordering: { color: 'bg-blue-500', dot: 'bg-blue-400' },
-                  'waiting-bill': { color: 'bg-orange-500', dot: 'bg-orange-400' },
+                  occupied: { color: 'bg-brand-500', dot: 'bg-brand-400' },
+                  ordering: { color: 'bg-brand-500', dot: 'bg-brand-400' },
+                  'waiting-bill': { color: 'bg-brand-500', dot: 'bg-brand-400' },
                   reserved: { color: 'bg-red-500', dot: 'bg-red-400' },
                 }
                 const config = statusConfig[t.status as keyof typeof statusConfig]

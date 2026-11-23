@@ -36,11 +36,11 @@ const postpaidSteps = ['Scan QR', 'Browse', 'Place Order', 'Kitchen Starts', 'Se
 
 const stepColors: Record<string, string> = {
   'Scan QR': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
-  'Browse': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
+  'Browse': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Pay Online': 'text-green-400 bg-green-500/20 border border-green-500/30',
-  'Place Order': 'text-blue-400 bg-blue-500/20 border border-blue-500/30',
-  'Kitchen Starts': 'text-orange-400 bg-orange-500/20 border border-orange-500/30',
-  'Kitchen Receives': 'text-orange-400 bg-orange-500/20 border border-orange-500/30',
+  'Place Order': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Kitchen Starts': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
+  'Kitchen Receives': 'text-brand-400 bg-brand-500/20 border border-brand-500/30',
   'Serve': 'text-green-400 bg-green-500/20 border border-green-500/30',
   'Bill Request': 'text-purple-400 bg-purple-500/20 border border-purple-500/30',
   'Payment': 'text-emerald-400 bg-emerald-500/20 border border-emerald-500/30',
@@ -140,9 +140,9 @@ export const PrepaidVsPostpaid: React.FC = () => {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                  view === 'prepaid' ? 'bg-green-500/20 border border-green-500/30' : 'bg-blue-500/20 border border-blue-500/30'
+                  view === 'prepaid' ? 'bg-green-500/20 border border-green-500/30' : 'bg-brand-500/20 border border-brand-500/30'
                 }`}>
-                  <span className={`${view === 'prepaid' ? 'text-green-400' : 'text-blue-400'} text-xl font-bold`}>
+                  <span className={`${view === 'prepaid' ? 'text-green-400' : 'text-brand-400'} text-xl font-bold`}>
                     {view === 'prepaid' ? '💳' : '💰'}
                   </span>
                 </div>
@@ -193,7 +193,7 @@ export const PrepaidVsPostpaid: React.FC = () => {
                     whileHover={{ scale: 1.2 }}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       i === currentStep
-                        ? view === 'prepaid' ? 'bg-green-400' : 'bg-blue-400'
+                        ? view === 'prepaid' ? 'bg-green-400' : 'bg-brand-400'
                         : 'bg-white/10'
                     }`}
                   />

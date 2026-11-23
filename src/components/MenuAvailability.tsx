@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const items = [
   { name: 'Margherita Pizza', status: 'available', icon: '🍕', color: 'text-green-400' },
   { name: 'Pasta Carbonara', status: 'available', icon: '🍝', color: 'text-green-400' },
-  { name: 'Grilled Salmon', status: 'out-of-stock', icon: '🐟', color: 'text-yellow-400' },
+  { name: 'Grilled Salmon', status: 'out-of-stock', icon: '🐟', color: 'text-brand-400' },
   { name: 'Chocolate Cake', status: 'hidden', icon: '🍰', color: 'text-red-400' },
   { name: 'Caesar Salad', status: 'seasonal', icon: '🥗', color: 'text-emerald-400' },
 ]
@@ -126,7 +126,7 @@ export const MenuAvailability: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       {item.status === 'out-of-stock' ? (
-                        <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider">Out of Stock</span>
+                        <span className="text-xs font-bold text-brand-400 uppercase tracking-wider">Out of Stock</span>
                       ) : (
                         <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Available</span>
                       )}

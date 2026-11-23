@@ -74,7 +74,7 @@ export const Blog: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       <SEO
         title="Blog — Restaurant Operations Insights | DineOS"
         description="DineOS blog: restaurant operations insights, QR ordering, kitchen management, zone pricing, and hospitality industry trends."
@@ -91,7 +91,7 @@ export const Blog: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-slate-900/30 section-padding">
+      <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {blogPosts.map((post, i) => (
@@ -101,17 +101,17 @@ export const Blog: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ y: -4 }}
-                className="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-500/50 transition-all duration-300 group"
+                className="glass-card p-8 rounded-3xl border border-[#E2E8F0] hover:border-brand-500/50 transition-all duration-300 group"
               >
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-6 ${post.icon.name === 'FileText' ? 'text-brand-400' : 'text-blue-400'}`}>
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-6 ${post.icon.name === 'FileText' ? 'text-brand-600' : 'text-brand-600'}`}>
                   <post.icon className="text-xl" />
                 </div>
-                <span className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-3 block">{post.category}</span>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-400 transition-colors">{post.title}</h3>
-                <p className="text-sm text-slate-400 mb-6 leading-relaxed">{post.excerpt}</p>
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <span className="text-xs font-bold text-brand-600 uppercase tracking-wider mb-3 block">{post.category}</span>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-brand-600 transition-colors">{post.title}</h3>
+                <p className="text-sm text-[#64748B] mb-6 leading-relaxed">{post.excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-[#64748B]">
                   <span>{post.date} • {post.readTime}</span>
-                  <span className="text-brand-400 font-medium">Read more →</span>
+                  <span className="text-brand-600 font-medium">Read more →</span>
                 </div>
               </motion.div>
             ))}
@@ -121,8 +121,8 @@ export const Blog: React.FC = () => {
 
       <section className="section-padding">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Want More Restaurant Operations Content?</h2>
-          <p className="text-slate-400 mb-8">Subscribe to our newsletter for weekly insights and product updates.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">Want More Restaurant Operations Content?</h2>
+          <p className="text-[#64748B] mb-8">Subscribe to our newsletter for weekly insights and product updates.</p>
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
@@ -132,7 +132,7 @@ export const Blog: React.FC = () => {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
               required
-              className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
+              className="flex-1 px-4 py-3 rounded-xl bg-brand-50/60 border border-[#E2E8F0] text-[#0F172A] placeholder-[#64748B] focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none"
             />
             <button type="submit" disabled={status === 'sending'} className="btn-primary px-6 disabled:opacity-60">{status === 'sending' ? 'Sending...' : 'Subscribe'}</button>
           </form>
